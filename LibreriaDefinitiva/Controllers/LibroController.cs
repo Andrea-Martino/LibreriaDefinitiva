@@ -1,7 +1,9 @@
 ﻿using LibreriaDefinitiva.Database;
 using LibreriaDefinitiva.Models;
+using LibreriaDefinitiva.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace LibreriaDefinitiva.Controllers
 {
@@ -36,24 +38,62 @@ namespace LibreriaDefinitiva.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddBook([FromBody] Libro newBook)
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult AddBook([FromBody] LibroDTO newBook)
         {
-            var scaffale = _db.Libreria.FirstOrDefault(s => s.ScaffaleId == newBook.Genere);
+            if (newBook == null) return BadRequest();
+            if (newBook.Isbn.Length != 13 && newBook.Isbn.Length != 10) return BadRequest(newBook.Isbn);
+
+            var scaffale = _db.Libreria.FirstOrDefault(s => s.Genere == newBook.Genere);
             if (scaffale == null)
             {
                 scaffale = new Scaffale
                 {
-                    ScaffaleId = newBook.Genere,
+                    Genere = newBook.Genere,
                     ScaffaleDiLibri = new List<Libro>()
                 };
                 _db.Libreria.Add(scaffale);
             }
-            scaffale.ScaffaleDiLibri.Add(newBook);
+
+            Libro model = new()
+            {
+                Isbn = newBook.Isbn,
+                Titolo = newBook.Titolo,
+                Autore = newBook.Autore,
+                Genere = newBook.Genere,
+                Edizione = newBook.Edizione,
+                ScaffaleId = scaffale.ScaffaleId,
+                Scaffale = scaffale
+            };
+
+            scaffale.ScaffaleDiLibri.Add(model);
             _db.SaveChanges();
-            return CreatedAtAction(nameof(GetAllBooks), new { isbn = newBook.Isbn }, newBook);
+            return CreatedAtAction(nameof(SearchBooks), new { isbn = newBook.Isbn }, newBook);
         }
 
-        [HttpGet("search")]
+        [HttpGet("{isbn}", Name = "GetLibroByIsbn")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult SearchBookByIsbn(string isbn)
+        {
+            if (isbn == null || isbn.Length != 13 && isbn.Length != 10)
+            {
+                _logger.LogError("Non esiste un libro con ISBN: " + isbn);
+                return BadRequest();
+            }
+
+            var book = _db.Libreria
+                              .SelectMany(s => s.ScaffaleDiLibri)
+                              .Where(b => b.Isbn.Equals(isbn))
+                              .ToList().FirstOrDefault();
+            if (book == null)   return NotFound();
+            return Ok(book);
+
+        }
+
+        [HttpGet("{titolo}", Name = "GetLibroByTitolo")]
         public IActionResult SearchBooks([FromQuery] string query)
         {
             var books = _db.Libreria
