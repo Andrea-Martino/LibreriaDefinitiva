@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibreriaDefinitiva.Models
 {
     public class Libro
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int LibroId { get; set; }    
         [Required]
         [MaxLength(13)]

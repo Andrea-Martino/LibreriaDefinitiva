@@ -63,8 +63,7 @@ namespace LibreriaDefinitiva.Database
                                             Edizione = parts[4],
                                             ScaffaleId = scaffali.First(s => s.Genere == parts[3]).ScaffaleId,
                                             Scaffale = scaffali.First(s => s.Genere == parts[3])
-                                        })
-                                        .ToList();
+                                        }).ToList();
             Libri.AddRange(allBooks);
             SaveChanges();
         }
