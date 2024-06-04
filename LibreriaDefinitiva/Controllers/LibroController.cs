@@ -2,7 +2,9 @@
 using LibreriaDefinitiva.Models;
 using LibreriaDefinitiva.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
+using System.IO.IsolatedStorage;
 using System.Linq;
+using System.Reflection.Metadata;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace LibreriaDefinitiva.Controllers
@@ -111,25 +113,57 @@ namespace LibreriaDefinitiva.Controllers
             return Ok(books);
         }
 
-        [HttpDelete("{isbn}")]
-        public IActionResult DeleteBook(string isbn)
+        [HttpDelete("{isbn}, {quantita: int}")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult DeleteBook(string isbn, int quantita)
         {
-            var book = _db.Libreria
-                                .SelectMany(s => s.ScaffaleDiLibri)
-                                .FirstOrDefault(b => b.Isbn == isbn);
-            if (book == null)
+            if (string.IsNullOrEmpty(isbn) || (isbn.Length != 13 && isbn.Length != 10))
             {
+                _logger.LogError("ISBN non valido: " + isbn);
+                return BadRequest();
+            }
+
+            var books = _db.Libreria.SelectMany(s => s.ScaffaleDiLibri)
+                                 .Where(l => l.Isbn.Equals(isbn))
+                                 .ToList();
+
+            if (!books.Any())
+            {
+                _logger.LogError("Non esiste un libro con ISBN: " + isbn);
                 return NotFound();
             }
 
-            var scaffale = _db.Libreria.FirstOrDefault(s => s.ScaffaleDiLibri.Contains(book));
-            if (scaffale != null)
+            if (quantita > books.Count())
             {
-                scaffale.ScaffaleDiLibri.Remove(book);
-                _db.SaveChanges();
+                bool continueOperation = AskUserToContinue(quantita, books.Count());
+                if (!continueOperation)
+                {
+                    return BadRequest("La quantità richiesta è maggiore dei libri disponibili.");
+                }
             }
 
+            for (int i = 0; i < quantita; i++)
+            {
+                try
+                {
+                    var libroToRemove = books[i];
+                    var scaffale = _db.Libreria.ToList().FirstOrDefault(s => s.ScaffaleDiLibri.Contains(libroToRemove));
+                    scaffale.ScaffaleDiLibri.Remove(libroToRemove);
+                    _db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError);
+                }
+            }
             return NoContent();
+        }
+
+        private bool AskUserToContinue(int quantita, int availableBooks)
+        {
+            return true;
         }
     }
 }
