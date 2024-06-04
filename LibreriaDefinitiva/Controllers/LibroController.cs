@@ -182,7 +182,7 @@ namespace LibreriaDefinitiva.Controllers
                 Titolo = libro.Titolo,
             };
 
-            patchDTO.ApplyTo(libroDTO, ModelState);
+            patchDTO.ApplyTo(libroDTO);
 
             Libro model = new Libro()
             {
@@ -197,7 +197,7 @@ namespace LibreriaDefinitiva.Controllers
 
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            return CreatedAtAction(nameof(GetLibroByIsbn), new { titolo = libro.Titolo }, libro);
+            return CreatedAtAction(nameof(SearchBookByIsbn), new { isbn = libro.Isbn }, libro);
         }
 
 
