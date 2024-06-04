@@ -4,7 +4,7 @@ namespace LibreriaDefinitiva.Models
 {
     public class Libro
     {
-        [Key]
+        public int LibroId { get; set; }    
         [Required]
         [MaxLength(13)]
         [MinLength(10)]

@@ -16,6 +16,16 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Ottieni il contesto del database dal service provider
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<ApplicationDbContext>();
+
+    // Inizializza i dati del database
+    context.InitializeData();
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

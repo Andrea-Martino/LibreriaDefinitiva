@@ -22,7 +22,7 @@ namespace LibreriaDefinitiva.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            // Configura la relazione uno a molti tra scaffale e libri
+
             modelBuilder.Entity<Scaffale>()
                 .HasMany(s => s.ScaffaleDiLibri)
                 .WithOne(l => l.Scaffale)
@@ -30,7 +30,7 @@ namespace LibreriaDefinitiva.Database
         }
         public void InitializeData()
         {
-            // Verifica se il database è già stato inizializzato
+
             if (Libreria.Any())
                 return;
 
@@ -41,20 +41,17 @@ namespace LibreriaDefinitiva.Database
                               .Distinct()
                               .ToList();
 
-            // Crea gli scaffali
             var scaffali = genres.Select(g => new Scaffale
             {
-                ScaffaleId = Guid.NewGuid().ToString(), // Genera un ID unico per ogni scaffale
+                ScaffaleId = Guid.NewGuid().ToString(), 
                 Genere = g,
                 ScaffaleDiLibri = new List<Libro>()
             })
             .ToList();
 
-            // Aggiungi scaffali al contesto e salva i cambiamenti
             Libreria.AddRange(scaffali);
             SaveChanges();
 
-            // Crea i libri
             List<Libro> allBooks = lines.Skip(1)
                                         .Select(line => line.Split(';'))
                                         .Select(parts => new Libro
@@ -68,8 +65,6 @@ namespace LibreriaDefinitiva.Database
                                             Scaffale = scaffali.First(s => s.Genere == parts[3])
                                         })
                                         .ToList();
-
-            // Aggiungi i libri al contesto e salva i cambiamenti
             Libri.AddRange(allBooks);
             SaveChanges();
         }
