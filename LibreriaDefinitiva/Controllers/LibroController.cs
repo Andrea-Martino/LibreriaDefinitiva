@@ -90,16 +90,24 @@ namespace LibreriaDefinitiva.Controllers
                               .ToList().FirstOrDefault();
             if (book == null)   return NotFound();
             return Ok(book);
-
         }
 
-        [HttpGet("{titolo}", Name = "GetLibroByTitolo")]
+        [HttpGet("{query}", Name = "GetLibroByTitoloOrAutore")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult SearchBooks([FromQuery] string query)
         {
+            if (query == null)
+            {
+                _logger.LogError("Titolo o autore non validi");
+                return BadRequest();
+            }
             var books = _db.Libreria
                                 .SelectMany(s => s.ScaffaleDiLibri)
                                 .Where(b => b.Titolo.Contains(query) || b.Autore.Contains(query))
                                 .ToList();
+            if (!books.Any()) return NotFound();
             return Ok(books);
         }
 
@@ -125,3 +133,4 @@ namespace LibreriaDefinitiva.Controllers
         }
     }
 }
+
