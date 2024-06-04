@@ -24,7 +24,7 @@ namespace LibreriaDefinitiva.Database
             //Aggiungi libri nello scaffale
             foreach (var book in allBooks)
             {
-                if(!(Libreria.Any(s => s.GenereId.Equals(book.Genere))))
+                if (!(Libreria.Any(s => s.GenereId.Equals(book.Genere))))
                 {
                     Libreria.Add(new Scaffale
                     {
