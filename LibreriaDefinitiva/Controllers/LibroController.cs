@@ -163,7 +163,7 @@ namespace LibreriaDefinitiva.Controllers
             }
             return NoContent();
         }
-
+        /*
         [HttpPatch("{isbn}", Name = "UpdatePartialScaffale")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -199,7 +199,7 @@ namespace LibreriaDefinitiva.Controllers
 
             return CreatedAtAction(nameof(SearchBookByIsbn), new { isbn = libro.Isbn }, libro);
         }
-
+        */
 
 
 
