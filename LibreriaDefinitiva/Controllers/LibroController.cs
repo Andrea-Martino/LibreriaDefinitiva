@@ -38,12 +38,12 @@ namespace LibreriaDefinitiva.Controllers
         [HttpPost]
         public IActionResult AddBook([FromBody] Libro newBook)
         {
-            var scaffale = _db.Libreria.FirstOrDefault(s => s.GenereId == newBook.Genere);
+            var scaffale = _db.Libreria.FirstOrDefault(s => s.ScaffaleId == newBook.Genere);
             if (scaffale == null)
             {
                 scaffale = new Scaffale
                 {
-                    GenereId = newBook.Genere,
+                    ScaffaleId = newBook.Genere,
                     ScaffaleDiLibri = new List<Libro>()
                 };
                 _db.Libreria.Add(scaffale);

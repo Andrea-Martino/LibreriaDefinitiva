@@ -36,7 +36,10 @@ namespace LibreriaDefinitiva.Database
             modelBuilder.Entity<Libro>().HasData(allBooks.ToArray());*/
             base.OnModelCreating(modelBuilder);
             //Configura la relazione uno a molti tra scaffale e libri
-            modelBuilder.Entity<Scaffale>().HasMany(s=>s.ScaffaleDiLibri).WithOne(l=>l.Scaffale).HasForeignKey(l=>l.Scaffale.ScaffaleId);
+            modelBuilder.Entity<Scaffale>()
+                .HasMany(s => s.ScaffaleDiLibri)
+                .WithOne(l => l.Scaffale)
+                .HasForeignKey(l => l.ScaffaleId);
 
         }
         public void InizializeData()
