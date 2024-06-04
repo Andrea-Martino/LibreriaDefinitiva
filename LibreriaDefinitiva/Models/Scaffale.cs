@@ -7,7 +7,7 @@ namespace LibreriaDefinitiva.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string ScaffaleId { get; set; }
+        public int ScaffaleId { get; set; }
         public string Genere { get; set; }
         public List<Libro> ScaffaleDiLibri { get; set; }
     }

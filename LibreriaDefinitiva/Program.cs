@@ -20,10 +20,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var context = services.GetRequiredService<ApplicationDbContext>();
-
-    // Inizializza i dati del database
-    context.InitializeData();
+    ApplicationDbContext context = services.GetRequiredService<ApplicationDbContext>();
 }
 
 // Configure the HTTP request pipeline.

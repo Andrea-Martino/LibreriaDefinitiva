@@ -1,12 +1,9 @@
 ﻿using LibreriaDefinitiva.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using static System.Reflection.Metadata.BlobBuilder;
 
 namespace LibreriaDefinitiva.Database
 {
@@ -17,7 +14,7 @@ namespace LibreriaDefinitiva.Database
         }
 
         public DbSet<Scaffale> Libreria { get; set; }
-        public DbSet<Libro> Libri { get; set; }
+        public DbSet<Scaffale> Libri { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,13 +24,20 @@ namespace LibreriaDefinitiva.Database
                 .HasMany(s => s.ScaffaleDiLibri)
                 .WithOne(l => l.Scaffale)
                 .HasForeignKey(l => l.ScaffaleId);
+
+            // Configurazione di Isbn come chiave primaria per Libro
+            modelBuilder.Entity<Libro>().HasKey(l => l.Isbn);
+
+            // Seed data during model creation
+            var scaffali = SeedScaffali();
+            var libri = SeedLibri(scaffali);
+
+            modelBuilder.Entity<Scaffale>().HasData(scaffali);
+            modelBuilder.Entity<Libro>().HasData(libri);
         }
-        public void InitializeData()
+
+        private List<Scaffale> SeedScaffali()
         {
-
-            if (Libreria.Any())
-                return;
-
             var lines = File.ReadAllLines("Libri.csv");
 
             var genres = lines.Skip(1)
@@ -41,32 +45,37 @@ namespace LibreriaDefinitiva.Database
                               .Distinct()
                               .ToList();
 
-            var scaffali = genres.Select(g => new Scaffale
+            var scaffali = genres.Select((g, i) =>
             {
-                ScaffaleId = Guid.NewGuid().ToString(), 
-                Genere = g,
-                ScaffaleDiLibri = new List<Libro>()
-            })
-            .ToList();
+                return new Scaffale
+                {
+                    Genere = g
+                };
+            }).OrderBy(s => s.ScaffaleId).ToList();
 
-            Libreria.AddRange(scaffali);
-            SaveChanges();
-
-            List<Libro> allBooks = lines.Skip(1)
-                                        .Select(line => line.Split(';'))
-                                        .Select(parts => new Libro
-                                        {
-                                            Isbn = parts[0],
-                                            Titolo = parts[1],
-                                            Autore = parts[2],
-                                            Genere = parts[3],
-                                            Edizione = parts[4],
-                                            ScaffaleId = scaffali.First(s => s.Genere == parts[3]).ScaffaleId,
-                                            Scaffale = scaffali.First(s => s.Genere == parts[3])
-                                        }).ToList();
-            Libri.AddRange(allBooks);
-            SaveChanges();
+            return scaffali;
         }
 
+        private List<Libro> SeedLibri(List<Scaffale> scaffali)
+        {
+            var lines = File.ReadAllLines("Libri.csv");
+
+            var uniqueBooks = lines.Skip(1)
+                                  .Select(line => line.Split(';'))
+                                  .GroupBy(parts => parts[0]) // Group by ISBN
+                                  .Select(g => g.First()) // Select the first row of each group
+                                  .Select(parts => new Libro
+                                  {
+                                      Isbn = parts[0],
+                                      Titolo = parts[1],
+                                      Autore = parts[2],
+                                      Genere = parts[3],
+                                      Edizione = parts[4],
+                                      ScaffaleId = scaffali.First(s => s.Genere == parts[3]).ScaffaleId
+                                  })
+                                  .ToList();
+
+            return uniqueBooks;
+        }
     }
 }
