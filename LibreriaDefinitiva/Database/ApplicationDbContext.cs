@@ -35,28 +35,30 @@ namespace LibreriaDefinitiva.Database
             }
             modelBuilder.Entity<Libro>().HasData(allBooks.ToArray());*/
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Scaffale>().HasMany(s=>s.ScaffaleDiLibri).WithOne(l=>l.Scaffale).HasForeignKey(e=>e.Scaffale.GenereId);
+            //Configura la relazione uno a molti tra scaffale e libri
+            modelBuilder.Entity<Scaffale>().HasMany(s=>s.ScaffaleDiLibri).WithOne(l=>l.Scaffale).HasForeignKey(l=>l.Scaffale.ScaffaleId);
 
         }
         public void InizializeData()
         {
             var lines = System.IO.File.ReadAllLines("books.csv");
             List<Libro> allBooks = lines.Skip(1)
-                                .Select(line => line.Split(';'))
-                                .Select(parts => new Libro
-                                {
-                                    Isbn = parts[0],
-                                    Titolo = parts[1],
-                                    Autore = parts[2],
-                                    Genere = parts[3],
-                                    Edizione = parts[4]
-                                })
-                                .ToList();
+                                    .Select(line => line.Split(';'))
+                                    .Select(parts => new Libro
+                                    {
+                                        Isbn = parts[0],
+                                        Titolo = parts[1],
+                                        Autore = parts[2],
+                                        Genere = parts[3],
+                                        Edizione = parts[4]
+                                    })
+                                    .ToList();
             //Raggruppa i libri per genere e crea gli scaffali
-            var scaffali= allBooks.GroupBy(l => l.Genere)
+            var scaffali = allBooks.GroupBy(l => l.Genere)
                                    .Select(g => new Scaffale
                                    {
-                                       GenereId = g.Key,
+                                       ScaffaleId = Guid.NewGuid().ToString(), // Genera un ID unico per ogni scaffale
+                                       Genere = g.Key,
                                        ScaffaleDiLibri = g.ToList()
                                    })
                                    .ToList();
