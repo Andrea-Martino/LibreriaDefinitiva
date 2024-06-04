@@ -2,6 +2,7 @@
 using LibreriaDefinitiva.Models;
 using LibreriaDefinitiva.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Reflection.Metadata;
@@ -148,6 +149,7 @@ namespace LibreriaDefinitiva.Controllers
             {
                 try
                 {
+                    _db.Libri.Remove(books[i]);
                     var libroToRemove = books[i];
                     var scaffale = _db.Libreria.ToList().FirstOrDefault(s => s.ScaffaleDiLibri.Contains(libroToRemove));
                     scaffale.ScaffaleDiLibri.Remove(libroToRemove);
@@ -161,10 +163,48 @@ namespace LibreriaDefinitiva.Controllers
             return NoContent();
         }
 
+        /*[HttpPatch("{isbn}", Name = "UpdatePartialScaffale")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public IActionResult UpdatePartialScaffale(string isbn, JsonPatchDocument<LibroDTO> patchDTO)
+        {
+            if (patchDTO == null || !_db.Libri.Any(l => l.Isbn.Equals(isbn))) return BadRequest();
+
+            var libro = _db.Libri.AsNoTracking().FirstOrDefault(l => l.Isbn == isbn);
+            if (libro == null) return NotFound();
+
+            LibroDTO libroDTO = new()
+            {
+                ISBN = libro.ISBN,
+                Autore = libro.Autore,
+                Genere = libro.Genere,
+                Titolo = libro.Titolo,
+                Copertina = libro.Copertina
+            };
+
+            patchDTO.ApplyTo(libroDTO, ModelState);
+
+            Libro model = new Libro()
+            {
+                ISBN = libroDTO.ISBN,
+                Autore = libroDTO.Autore,
+                Genere = libroDTO.Genere,
+                Titolo = libroDTO.Titolo,
+                Copertina = libroDTO.Copertina
+            };
+
+            _db.Libri.Update(model);
+            _db.SaveChanges();
+
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            return CreatedAtAction(nameof(GetLibro), new { titolo = libro.Titolo }, libro);
+        }
+
         private bool AskUserToContinue(int quantita, int availableBooks)
         {
             return true;
-        }
+        }*/
     }
 }
 
