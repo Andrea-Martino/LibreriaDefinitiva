@@ -5,6 +5,7 @@
 
 * {
     font-family: 'distilleryStrong', Arial, sans-serif;
+    background-color: #aeaeac;
 }
 
 nav {
@@ -28,7 +29,6 @@ nav {
     }
 
         nav a:hover {
-            background-color: #555;
             color: #d0d0d0;
         }
 
@@ -85,7 +85,7 @@ th, td {
 
 footer {
     background-color: #333;
-    color: white;
+    color: #aeaeac;
     text-align: center;
     padding: 1rem 0;
     width: 100%;
@@ -94,17 +94,21 @@ footer {
 
     footer p {
         margin: 0.5rem 0;
+        background-color: #333;
     }
 
     footer a {
-        color: white;
+        color: #aeaeac;
         text-decoration: none;
         margin: 0 0.5rem;
+        background-color: #333;
     }
 
-footer a:hover {
-        text-decoration: underline;
-}
+        footer a:hover {
+            text-decoration: underline;
+            background-color: #555;
+            color: #aeaeac;
+        }
 
 textarea {
     width: 100%;
