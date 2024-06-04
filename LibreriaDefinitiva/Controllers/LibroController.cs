@@ -1,6 +1,7 @@
 ﻿using LibreriaDefinitiva.Database;
 using LibreriaDefinitiva.Models;
 using LibreriaDefinitiva.Models.Dto;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.IO.IsolatedStorage;
@@ -163,7 +164,7 @@ namespace LibreriaDefinitiva.Controllers
             return NoContent();
         }
 
-        /*[HttpPatch("{isbn}", Name = "UpdatePartialScaffale")]
+        [HttpPatch("{isbn}", Name = "UpdatePartialScaffale")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public IActionResult UpdatePartialScaffale(string isbn, JsonPatchDocument<LibroDTO> patchDTO)
@@ -175,22 +176,20 @@ namespace LibreriaDefinitiva.Controllers
 
             LibroDTO libroDTO = new()
             {
-                ISBN = libro.ISBN,
+                Isbn = libro.Isbn,
                 Autore = libro.Autore,
                 Genere = libro.Genere,
                 Titolo = libro.Titolo,
-                Copertina = libro.Copertina
             };
 
             patchDTO.ApplyTo(libroDTO, ModelState);
 
             Libro model = new Libro()
             {
-                ISBN = libroDTO.ISBN,
+                Isbn = libroDTO.Isbn,
                 Autore = libroDTO.Autore,
                 Genere = libroDTO.Genere,
                 Titolo = libroDTO.Titolo,
-                Copertina = libroDTO.Copertina
             };
 
             _db.Libri.Update(model);
@@ -198,13 +197,15 @@ namespace LibreriaDefinitiva.Controllers
 
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            return CreatedAtAction(nameof(GetLibro), new { titolo = libro.Titolo }, libro);
+            return CreatedAtAction(nameof(GetLibroByIsbn), new { titolo = libro.Titolo }, libro);
         }
+
+
+
 
         private bool AskUserToContinue(int quantita, int availableBooks)
         {
             return true;
-        }*/
+        }
     }
 }
-
