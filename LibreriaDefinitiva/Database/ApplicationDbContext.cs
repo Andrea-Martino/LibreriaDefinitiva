@@ -24,26 +24,36 @@ namespace LibreriaDefinitiva.Database
                 entity.Property(e => e.ScaffaleId)
                       .ValueGeneratedOnAdd();
             });
-           
-            var scaffali = SeedScaffali();
-            modelBuilder.Entity<Scaffale>().HasData(scaffali.Select(s => new { s.ScaffaleId, s.Genere }));
 
+            var scaffali = SeedScaffali();
+
+            // Inserimento dei dati per gli scaffali
+            modelBuilder.Entity<Scaffale>().HasData(scaffali.Select((s, index) => new { ScaffaleId = -(index + 1), s.Genere }));
+
+            // Inserimento dei dati per i libri
+            var libroIdCounter = 1; // Iniziamo da 1 per evitare la chiave primaria 0
             foreach (var scaffale in scaffali)
             {
-                modelBuilder.Entity<Scaffale>().OwnsMany(s => s.ScaffaleDiLibri).HasData(
-                    scaffale.ScaffaleDiLibri.Select(l => new
+                modelBuilder.Entity<Libro>().HasData(
+                    scaffale.ScaffaleDiLibri.Select(libro =>
                     {
-                        l.LibroId,
-                        l.Isbn,
-                        l.Titolo,
-                        l.Autore,
-                        l.Genere,
-                        l.Edizione,
-                        l.Prezzo, 
-                        scaffale.ScaffaleId
+                        var uniqueLibroId = libroIdCounter++;
+                        return new Libro
+                        {
+                            LibroId = uniqueLibroId,
+                            Isbn = libro.Isbn,
+                            Titolo = libro.Titolo,
+                            Autore = libro.Autore,
+                            Genere = libro.Genere,
+                            Edizione = libro.Edizione,
+                            Prezzo = libro.Prezzo,
+                            Quantita = libro.Quantita,
+                            ScaffaleId = scaffale.ScaffaleId
+                        };
                     }).ToArray());
             }
         }
+
 
         private List<Scaffale> SeedScaffali()
         {
@@ -53,13 +63,13 @@ namespace LibreriaDefinitiva.Database
                              .Select(line => line.Split(';'))
                              .Select(parts => new Libro
                              {
-                                 LibroId=0,
                                  Isbn = parts[0],
                                  Titolo = parts[1],
                                  Autore = parts[2],
                                  Genere = parts[3],
-                                 Edizione = parts[4], 
-                                 Prezzo = double.Parse(parts[5])
+                                 Edizione = parts[4],
+                                 Prezzo = double.Parse(parts[5]), 
+                                 Quantita = int.Parse(parts[6])
                              })
                              .ToList();
 
@@ -69,7 +79,6 @@ namespace LibreriaDefinitiva.Database
 
             var scaffali = genres.Select((g, i) => new Scaffale
             {
-                ScaffaleId = i + 1,
                 Genere = g,
                 ScaffaleDiLibri = libri.Where(l => l.Genere == g).ToList()
             }).ToList();

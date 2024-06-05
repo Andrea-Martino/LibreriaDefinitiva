@@ -1,195 +1,45 @@
-ISBN;Titolo;Autore;Genere;Edizione;Prezzo
-9788804507379;Divina Commedia;Dante Alighieri;Poesia epica;Mondadori;15.00
-9788806213941;Il Gattopardo;Giuseppe Tomasi di Lampedusa;Romanzo storico;Mondadori;12.00
-9788804484144;Orgoglio e pregiudizio;Jane Austen;Romanzo;Mondadori;10.00
-9788804499179;Il Piccolo Principe;Antoine de Saint-Exupéry;Letteratura per ragazzi;Mondadori;9.00
-9788806170350;Cime tempestose;Emily Brontë;Romanzo gotico;Mondadori;13.00
-9788804210366;1984;George Orwell;Romanzo distopico;Mondadori;11.00
-9788804508994;Il nome della rosa;Umberto Eco;Romanzo storico;Mondadori;16.00
-9788804527025;Anna Karenina;Lev Tolstoj;Romanzo;Mondadori;14.00
-9788804474718;Il signore degli anelli;J.R.R. Tolkien;Fantasy;Mondadori;20.00
-9788804661905;Don Chisciotte della Mancia;Miguel de Cervantes;Romanzo parodico;Mondadori;18.00
-9788804508932;Guerra e pace;Lev Tolstoj;Romanzo storico;Mondadori;17.00
-9788804527827;Moby Dick;Herman Melville;Romanzo d'avventura;Mondadori;15.00
-9788804508185;Il conte di Montecristo;Alexandre Dumas;Romanzo d'avventura;Mondadori;14.00
-9788804533163;Madame Bovary;Gustave Flaubert;Romanzo;Mondadori;12.00
-9788804489606;Ulysses;James Joyce;Romanzo;Mondadori;18.00
-9788804668706;La metamorfosi;Franz Kafka;Romanzo breve;Mondadori;8.00
-9788804484274;Il rosso e il nero;Stendhal;Romanzo;Mondadori;10.00
-9788804482621;La coscienza di Zeno;Italo Svevo;Romanzo psicologico;Mondadori;11.00
-9788804702148;La storia infinita;Michael Ende;Romanzo fantasy;Mondadori;10.00
-9788804636293;Il maestro e Margherita;Michail Bulgakov;Romanzo fantastico;Mondadori;13.00
-9788804707846;Il giovane Holden;J.D. Salinger;Romanzo;Mondadori;9.00
-9788804484588;L'idiota;Fëdor Dostoevskij;Romanzo;Mondadori;12.00
-9788804709017;Il vecchio e il mare;Ernest Hemingway;Romanzo;Mondadori;10.00
-9788804541069;Cime tempestose;Emily Brontë;Romanzo gotico;Mondadori;13.00
-9788804514063;Lo straniero;Albert Camus;Romanzo;Mondadori;10.00
-9788804528015;I fratelli Karamàzov;Fëdor Dostoevskij;Romanzo;Mondadori;14.00
-9788804668669;Cent'anni di solitudine;Gabriel García Márquez;Romanzo;Mondadori;16.00
-9788804518023;Il deserto dei Tartari;Dino Buzzati;Romanzo;Mondadori;11.00
-9788804640580;Il pendolo di Foucault;Umberto Eco;Romanzo;Mondadori;15.00
-9788804630925;Il barone rampante;Italo Calvino;Romanzo;Mondadori;12.00
-9788804528053;Delitto e castigo;Fëdor Dostoevskij;Romanzo;Mondadori;13.00
-9788804610880;Zorba il greco;Nikos Kazantzakis;Romanzo;Mondadori;10.00
-9788804641419;Memorie di Adriano;Marguerite Yourcenar;Romanzo storico;Mondadori;14.00
-9788804509861;I promessi sposi;Alessandro Manzoni;Romanzo storico;Mondadori;15.00
-9788804507393;La città e le stelle;Arthur C. Clarke;Romanzo di fantascienza;Mondadori;12.00
-9788804528374;Morte a Venezia;Thomas Mann;Romanzo;Mondadori;11.00
-9788804493405;Le avventure di Pinocchio;Carlo Collodi;Letteratura per ragazzi;Mondadori;9.00
-9788804424434;Le confessioni;Agostino d'Ippona;Autobiografia;Mondadori;10.00
-9788804507683;La montagna incantata;Thomas Mann;Romanzo;Mondadori;16.00
-9788804668270;Il giocatore;Fëdor Dostoevskij;Romanzo;Mondadori;10.00
-9788804636163;La storia del dottor Wassell;James Hilton;Romanzo;Mondadori;12.00
-9788804668881;Un cuore semplice;Gustave Flaubert;Romanzo breve;Mondadori;8.00
-9788804624093;Il volo dell'angelo;James Patterson;Romanzo thriller;Mondadori;15.00
-9788804472226;La foresta;Enrico Brizzi;Romanzo;Mondadori;11.00
-9788804669307;L'amore molesto;Elena Ferrante;Romanzo;Mondadori;13.00
-9788804470956;L'isola del giorno prima;Umberto Eco;Romanzo storico;Mondadori;14.00
-9788804642096;Le relazioni pericolose;Pierre Choderlos de Laclos;Romanzo epistolare;Mondadori;12.00
-9788804490770;Vita di Galileo;Bertolt Brecht;Teatro;Mondadori;10.00
-9788804523102;L'ombra del vento;Carlos Ruiz Zafón;Romanzo;Mondadori;13.00
-9788804421976;Cronache del ghiaccio e del fuoco - Il Trono di Spade;George R.R. Martin;Fantasy;Mondadori;20.00
-9788804482410;Il ritratto di Dorian Gray;Oscar Wilde;Romanzo gotico;Mondadori;11.00
-9788804669314;Il deserto dei Tartari;Dino Buzzati;Romanzo;Mondadori;12.00
-9788804702919;Il giovane Holden;J.D. Salinger;Romanzo;Mondadori;9.00
-9788804486951;Eneide;Virgilio;Poesia epica;Mondadori;14.00
-9788804488610;La regina degli scacchi;Walter Tevis;Romanzo;Mondadori;12.00
-9788804600379;Cronache del ghiaccio e del fuoco - La spada dei giorni perduti;George R.R. Martin;Fantasy;Mondadori;21.00
-9788804530339;L'ira di Achille;Robert Graves;Romanzo storico;Mondadori;13.00
-9788804479560;Il cavaliere inesistente;Italo Calvino;Romanzo;Mondadori;10.00
-9788804512120;Il processo;Franz Kafka;Romanzo;Mondadori;11.00
-9788804488610;La regina degli scacchi;Walter Tevis;Romanzo;Mondadori;12.00
-9788804634138;L'assassinio di Roger Ackroyd;Agatha Christie;Romanzo giallo;Mondadori;9.00
-9788804650831;Cuore;Edmondo De Amicis;Romanzo;Mondadori;8.00
-9788804442932;Il vizietto di Babbo Natale;Agatha Christie;Romanzo giallo;Mondadori;10.00
-9788804655034;Lo strano caso del dottor Jekyll e del signor Hyde;Robert Louis Stevenson;Romanzo gotico;Mondadori;8.00
-9788804681959;La strada;Cormac McCarthy;Romanzo;Mondadori;10.00
-9788804668270;Il giocatore;Fëdor Dostoevskij;Romanzo;Mondadori;10.00
-9788804470482;La compagnia dell'anello;J.R.R. Tolkien;Fantasy;Mondadori;20.00
-9788804687838;Cronache del ghiaccio e del fuoco - I guerrieri del ghiaccio;George R.R. Martin;Fantasy;Mondadori;22.00
-9788804491036;L'interpretazione dei sogni;Sigmund Freud;Psicologia;Mondadori;14.00
-9788804441348;Racconti;Edgar Allan Poe;Raccolta di racconti;Mondadori;12.00
-9788804526998;Il ladro di orchidee;Susan Orlean;Romanzo;Mondadori;11.00
-9788804484339;Il canto d'inverno;William Shakespeare;Teatro;Mondadori;9.00
-9788804673069;Odissea;Omero;Poesia epica;Mondadori;15.00
-9788804475708;Il giorno della civetta;Leonardo Sciascia;Romanzo giallo;Mondadori;10.00
-9788804465983;Guerra e pace;Lev Tolstoj;Romanzo storico;Mondadori;17.00
-9788804645455;Il sole sorge ancora;Ernest Hemingway;Romanzo;Mondadori;12.00
-9788804628237;Il potere del cane;Don Winslow;Romanzo;Mondadori;14.00
-9788804685766;Lo specchio delle anime semplici;Marguerite Porete;Teologia mistica;Mondadori;10.00
-9788804667778;Il grande Gatsby;F. Scott Fitzgerald;Romanzo;Mondadori;11.00
-9788804674905;I figli della mezzanotte;Salman Rushdie;Romanzo;Mondadori;13.00
-9788804610460;Vita di Samuel Johnson;James Boswell;Biografia;Mondadori;15.00
-9788804643109;Ragione e sentimento;Jane Austen;Romanzo;Mondadori;13.00
-9788804492880;Uno, nessuno e centomila;Luigi Pirandello;Romanzo;Mondadori;11.00
-9788804522105;Il giardino segreto;Frances Hodgson Burnett;Romanzo;Mondadori;9.00
-9788804447029;La taverna di Auerbach;Johann Wolfgang von Goethe;Teatro;Mondadori;8.00
-9788804668812;Anna Karenina;Lev Tolstoj;Romanzo;Mondadori;14.00
-9788804668973;Le avventure di Tom Sawyer;Mark Twain;Romanzo;Mondadori;10.00
-9788804621696;Il barone rampante;Italo Calvino;Romanzo;Mondadori;11.00
-9788804523225;Lettere persiane;Montesquieu;Romanzo epistolare;Mondadori;12.00
-9788804603004;Un americano tranquillo;Graham Greene;Romanzo;Mondadori;13.00
-9788804488153;Storia della mia gente;Eduardo De Filippo;Romanzo;Mondadori;9.00
-9788804486968;Il meraviglioso mago di Oz;L. Frank Baum;Romanzo per ragazzi;Mondadori;8.00
-9788804640825;Il fantasma di Canterville;Oscar Wilde;Romanzo;Mondadori;8.00
-9788804687395;La dama delle camelie;Alexandre Dumas figlio;Romanzo;Mondadori;10.00
-9788804676640;Le relazioni pericolose;Pierre Choderlos de Laclos;Romanzo epistolare;Mondadori;12.00
-9788804641495;Lo strano caso del dottor Jekyll e del signor Hyde;Robert Louis Stevenson;Romanzo gotico;Mondadori;9.00
-9788804462678;Anna Karenina;Lev Tolstoj;Romanzo;Mondadori;15.00
-9788804442765;Le relazioni pericolose;Pierre Choderlos de Laclos;Romanzo epistolare;Mondadori;11.00
-9788804687296;Guerra e pace;Lev Tolstoj;Romanzo storico;Mondadori;16.00
-9788804688880;Il ritratto di Dorian Gray;Oscar Wilde;Romanzo gotico;Mondadori;13.00
-9788804490169;La peste;Albert Camus;Romanzo;Mondadori;10.00
-9788804669734;Il canto d'inverno;William Shakespeare;Teatro;Mondadori;9.00
-9788804673557;La montagna incantata;Thomas Mann;Romanzo;Mondadori;15.00
-9788804674707;L'idiota;Fëdor Dostoevskij;Romanzo;Mondadori;11.00
-9788804674691;Delitto e castigo;Fëdor Dostoevskij;Romanzo;Mondadori;13.00
-9788804673465;La signora Dalloway;Virginia Woolf;Romanzo;Mondadori;12.00
-9788804687753;La morte a Venezia;Thomas Mann;Romanzo;Mondadori;10.00
-9788804689719;Il vecchio e il mare;Ernest Hemingway;Romanzo;Mondadori;9.00
-9788804687036;La foresta;Enrico Brizzi;Romanzo;Mondadori;11.00
-9788804687067;La scelta;Kiera Cass;Romanzo per ragazzi;Mondadori;8.00
-9788804689283;Il seggio vacante;J.K. Rowling;Romanzo;Mondadori;14.00
-9788804687081;Il romanzo di Mildred;William Somerset Maugham;Romanzo;Mondadori;12.00
-9788804686893;Il re dei giochi;J.K. Rowling;Romanzo;Mondadori;13.00
-9788804689313;Il richiamo del cuculo;J.K. Rowling;Romanzo;Mondadori;15.00
-9788804691538;L'ultimo cavaliere;J.K. Rowling;Romanzo;Mondadori;16.00
-9788804692832;Il seggio vacante;J.K. Rowling;Romanzo;Mondadori;17.00
-9788804694430;Il giardino segreto;Frances Hodgson Burnett;Romanzo;Mondadori;10.00
-9788804697226;Il racconto dell'ancella;Margaret Atwood;Romanzo distopico;Mondadori;11.00
-9788804703658;L'amore ai tempi del colera;Gabriel García Márquez;Romanzo;Mondadori;13.00
-9788804707846;Il giovane Holden;J.D. Salinger;Romanzo;Mondadori;14.00
-9788804739793;Il guardiano invisibile;Dolores Redondo;Romanzo giallo;Mondadori;12.00
-9788804742366;Il bacio d'argento;Kerstin Gier;Romanzo per ragazzi;Mondadori;9.00
-9788804748320;Il giardino segreto;Frances Hodgson Burnett;Romanzo;Mondadori;10.00
-9788804749648;La mia vita in una gabbia;Angela Contini;Autobiografia;Mondadori;11.00
-9788804761411;La lunga notte del dottor Galvan;Mario Righetti;Romanzo giallo;Mondadori;8.00
-9788804761534;La bellezza dell'imperfezione;Mia Couto;Romanzo;Mondadori;9.00
-9788804761350;Il segreto del bosco;Giles Kristian;Romanzo storico;Mondadori;14.00
-9788804761367;Il lago delle ombre;S.K. Tremayne;Romanzo;Mondadori;15.00
-9788804761435;La figlia scomparsa;Gillian Flynn;Romanzo giallo;Mondadori;13.00
-9788804761343;La maschera di ghiaccio;Greta Frosini;Romanzo giallo;Mondadori;12.00
-9788804761336;Il ritorno di Garibaldi;Francesco Trabalza;Romanzo storico;Mondadori;16.00
-9788804771595;Il giorno del falco;Jean-Christophe Grangé;Romanzo giallo;Mondadori;17.00
-9788804775227;Il confine del bosco;Cynthia Swanson;Romanzo;Mondadori;18.00
-9788804775241;La favola delle due anime;Anand Dilvar;Romanzo spirituale;Mondadori;19.00
-9788804782300;Il coraggio di Sara;Maggie O'Farrell;Romanzo;Mondadori;20.00
-9788804783215;Il segreto di Eleonora;Federica Bosco;Romanzo;Mondadori;21.00
-9788804783246;La piccola bottega degli orrori;Joe Hill;Romanzo gotico;Mondadori;22.00
-9788804783277;La melodia delle onde;Kerry Lonsdale;Romanzo;Mondadori;23.00
-9788804783284;La notte dei fuochi;Lorenzo Carcaterra;Romanzo;Mondadori;24.00
-978-3-16-148410-0;Il Nome della Rosa;Umberto Eco;Romanzo Storico;Einaudi(2019);19.99
-978-0-14-044926-6;Delitto e Castigo;Fëdor Dostoevskij;Classico;Einaudi(2019);14.99
-978-0-670-03284-5;1984;George Orwell;Distopia;Einaudi(2019);18.99
-978-1-56619-909-4;Il Grande Gatsby;F. Scott Fitzgerald;Classico;Einaudi(2019);13.99
-978-0-7432-7356-5;Il Codice Da Vinci;Dan Brown;Thriller;Einaudi(2019);20.99
-978-0-618-00221-3;Il Signore degli Anelli;J.R.R. Tolkien;Fantasy;Einaudi(2019);25.99
-978-0-307-28030-0;Il Diario di Anne Frank;Anne Frank;Biografia;Einaudi(2019);12.99
-978-0-525-47546-7;Il Profeta;Kahlil Gibran;Poesia;Einaudi(2019);10.99
-978-0-7432-7350-3;Il Piccolo Principe;Antoine de Saint-Exupéry;Fiaba;Einaudi(2019);11.99
-978-0-7432-7352-7;Orgoglio e Pregiudizio;Jane Austen;Romantico;Einaudi(2019);15.99
-978-0-06-097684-2;Il Nome della Rosa;Umberto Eco;Romanzo Storico;Bompiani(2010);19.99
-978-0-394-52826-8;Il Nome della Rosa;Umberto Eco;Romanzo Storico;Random House(1994);18.99
-978-0-141-03613-7;Delitto e Castigo;Fëdor Dostoevskij;Classico;Penguin Classics(2002);14.99
-978-0-679-73232-2;Delitto e Castigo;Fëdor Dostoevskij;Classico;Vintage(1993);13.99
-978-0-452-28423-4;1984;George Orwell;Distopia;Signet Classic(1990);17.99
-978-0-553-38031-6;1984;George Orwell;Distopia;Bantam Books(1981);16.99
-978-0-7434-7604-1;Il Grande Gatsby;F. Scott Fitzgerald;Classico;Scribner(2004);13.99
-978-0-19-953640-5;Il Grande Gatsby;F. Scott Fitzgerald;Classico;Oxford University Press(2008);14.99
-978-1-4767-5417-4;Il Codice Da Vinci;Dan Brown;Thriller;Simon & Schuster(2013);20.99
-978-0-593-07042-4;Il Codice Da Vinci;Dan Brown;Thriller;Corgi(2009);19.99
-978-0-395-19395-8;Il Signore degli Anelli;J.R.R. Tolkien;Fantasy;Houghton Mifflin(1965);24.99
-978-0-261-10325-3;Il Signore degli Anelli;J.R.R. Tolkien;Fantasy;HarperCollins(1991);22.99
-978-0-553-29698-3;Il Diario di Anne Frank;Anne Frank;Biografia;Bantam(1997);12.99
-978-0-14-118275-8;Il Diario di Anne Frank;Anne Frank;Biografia;Penguin Books(2001);11.99
-978-0-394-41171-3;Il Profeta;Kahlil Gibran;Poesia;Knopf(1982);10.99
-978-1-59540-078-3;Il Profeta;Kahlil Gibran;Poesia;Tribeca Books(2010);11.99
-978-0-15-202398-0;Il Piccolo Principe;Antoine de Saint-Exupéry;Fiaba;Harcourt(2000);11.99
-978-1-84749-823-7;Il Piccolo Principe;Antoine de Saint-Exupéry;Fiaba;Collector's Library(2008);12.99
-978-0-7432-7354-1;Orgoglio e Pregiudizio;Jane Austen;Romantico;Penguin Classics(2003);15.99
-978-0-19-280238-5;Orgoglio e Pregiudizio;Jane Austen;Romantico;Oxford University Press(2004);14.99
-978-0-7432-7355-8;Il Nome della Rosa;Umberto Eco;Romanzo Storico;Harper(2005);19.99
-978-0-06-233554-8;Il Nome della Rosa;Umberto Eco;Romanzo Storico;Ecco(2014);18.99
-978-0-141-03618-2;Delitto e Castigo;Fëdor Dostoevskij;Classico;Penguin Books(2007);15.99
-978-0-553-38033-0;1984;George Orwell;Distopia;Random House(2003);17.99
-978-1-5011-9835-0;Il Grande Gatsby;F. Scott Fitzgerald;Classico;Scribner(2018);13.99
-978-0-593-13798-2;Il Codice Da Vinci;Dan Brown;Thriller;Berkley(2020);21.99
-978-0-618-26037-7;Il Signore degli Anelli;J.R.R. Tolkien;Fantasy;Mariner Books(2005);25.99
-978-1-5011-9073-6;Il Diario di Anne Frank;Anne Frank;Biografia;Touchstone(2015);12.99
-978-0-06-084244-6;Il Profeta;Kahlil Gibran;Poesia;HarperOne(2014);10.99
-978-1-5011-7395-1;Il Piccolo Principe;Antoine de Saint-Exupéry;Fiaba;Scribner(2017);12.99
-978-0-307-27778-0;Orgoglio e Pregiudizio;Jane Austen;Romantico;Modern Library(2004);15.99
-978-0-452-28852-2;Il Nome della Rosa;Umberto Eco;Romanzo Storico;Penguin Books(2018);19.99
-978-0-14-310766-6;Delitto e Castigo;Fëdor Dostoevskij;Classico;Penguin Classics(2015);15.99
-978-0-451-52930-6;1984;George Orwell;Distopia;Signet Classic(2017);17.99
-978-0-7432-7356-9;Il Grande Gatsby;F. Scott Fitzgerald;Classico;Scribner(2013);14.99
-978-0-452-28852-2;Il Codice Da Vinci;Dan Brown;Thriller;Penguin Books(2018);21.99
-978-0-14-310766-6;Il Signore degli Anelli;J.R.R. Tolkien;Fantasy;Penguin Classics(2015);24.99
-978-0-451-52930-6;Il Diario di Anne Frank;Anne Frank;Biografia;Signet Classic(2017);12.99
-978-0-7432-7356-9;Il Profeta;Kahlil Gibran;Poesia;Scribner(2013);10.99
-978-0-452-28852-2;Il Piccolo Principe;Antoine de Saint-Exupéry;Fiaba;Penguin Books(2018);12.99
-978-0-14-310766-6;Orgoglio e Pregiudizio;Jane Austen;Romantico;Penguin Classics(2015);14.99
-978-0-451-52930-6;Il Nome della Rosa;Umberto Eco;Romanzo Storico;Signet Classic(2017);19.99
-978-0-14-303943-2;Moby Dick;Herman Melville;Classico;Penguin Classics(2006);16.99
-978-0-670-81302-8;Guerra e Pace;Lev Tolstoj;Classico;Vintage(2007);22.99
-978-0-14-118253-6;Madame Bovary;Gustave Flaubert;Classico;Penguin Books(2001);14.99
+ISBN;Titolo;Autore;Genere;Edizione;Prezzo;Quantità
+9788804507379;Divina Commedia;Dante Alighieri;Poesia epica;Mondadori;15.00;15
+9788806213941;Il Gattopardo;Giuseppe Tomasi di Lampedusa;Romanzo storico;Mondadori;12.00;3
+9788804484144;Orgoglio e pregiudizio;Jane Austen;Romanzo;Mondadori;10.00;9
+9788804499179;Il Piccolo Principe;Antoine de Saint-Exupéry;Letteratura per ragazzi;Mondadori;9.00;7
+9788806170350;Cime tempestose;Emily Brontë;Romanzo gotico;Mondadori;13.00;12
+9788804210366;1984;George Orwell;Romanzo distopico;Mondadori;11.00;8
+9788804508994;Il nome della rosa;Umberto Eco;Romanzo storico;Mondadori;16.00;4
+9788804527025;Anna Karenina;Lev Tolstoj;Romanzo;Mondadori;14.00;16
+9788804474718;Il signore degli anelli;J.R.R. Tolkien;Fantasy;Mondadori;20.00;10
+9788804661905;Don Chisciotte della Mancia;Miguel de Cervantes;Romanzo parodico;Mondadori;18.00;5
+9788804508932;Guerra e pace;Lev Tolstoj;Romanzo storico;Mondadori;17.00;19
+9788804527827;Moby Dick;Herman Melville;Romanzo d'avventura;Mondadori;15.00;2
+9788804508185;Il conte di Montecristo;Alexandre Dumas;Romanzo d'avventura;Mondadori;14.00;11
+9788804533163;Madame Bovary;Gustave Flaubert;Romanzo;Mondadori;12.00;18
+9788804489606;Ulysses;James Joyce;Romanzo;Mondadori;18.00;20
+9788804668706;La metamorfosi;Franz Kafka;Romanzo breve;Mondadori;8.00;1
+9788804484274;Il rosso e il nero;Stendhal;Romanzo;Mondadori;10.00;6
+9788804482621;La coscienza di Zeno;Italo Svevo;Romanzo psicologico;Mondadori;11.00;13
+9788804702148;La storia infinita;Michael Ende;Romanzo fantasy;Mondadori;10.00;14
+9788804522037;Il vecchio e il mare;Ernest Hemingway;Romanzo;Mondadori;10.00;17
+9788804707181;Il grande Gatsby;F. Scott Fitzgerald;Romanzo;Mondadori;12.00;20
+9788804587978;Memorie di Adriano;Marguerite Yourcenar;Romanzo storico;Mondadori;14.00;12
+9788804673380;Il ritratto di Dorian Gray;Oscar Wilde;Romanzo gotico;Mondadori;11.00;16
+9788804512816;Il visconte dimezzato;Italo Calvino;Romanzo fantastico;Mondadori;13.00;4
+9788804566621;Cronache del ghiaccio e del fuoco - Il Trono di Spade;George R.R. Martin;Fantasy;Mondadori;20.00;9
+9788804642928;Il sentiero dei nidi di ragno;Italo Calvino;Romanzo;Arnoldo Mondadori Editore;15.00;15
+9788804617069;L'isola del giorno prima;Umberto Eco;Romanzo storico;Mondadori;16.00;18
+9788804530865;Delitto e castigo;Fëdor Dostoevskij;Romanzo psicologico;Mondadori;14.00;7
+9788804667136;Il mondo nuovo;Aldous Huxley;Romanzo distopico;Mondadori;12.00;4
+9788804619223;Lo straniero;Albert Camus;Romanzo;Mondadori;11.00;10
+9788804514193;I miserabili;Victor Hugo;Romanzo;Mondadori;18.00;3
+9788804680371;Le avventure di Alice nel Paese delle Meraviglie;Lewis Carroll;Romanzo per ragazzi;Mondadori;9.00;2
+9788804605370;Lolita;Vladimir Nabokov;Romanzo;Mondadori;15.00;14
+9788804527438;Il fu Mattia Pascal;Luigi Pirandello;Romanzo;Mondadori;10.00;12
+9788804694156;Il deserto dei tartari;Dino Buzzati;Romanzo;Mondadori;13.00;5
+9788804683336;Il barone rampante;Italo Calvino;Romanzo fantastico;Mondadori;11.00;18
+9788804701783;Il giovane Holden;J.D. Salinger;Romanzo;Mondadori;12.00;9
+9788804656758;La ragazza di Bube;Carlo Cassola;Romanzo;Mondadori;10.00;11
+9788804607626;Giorni di un futuro passato;Isaac Asimov;Romanzo;Mondadori;14.00;15
+9788804621462;1984;George Orwell;Romanzo distopico;Mondadori;13.00;16
+9788804673381;Il nome della rosa;Umberto Eco;Romanzo storico;Mondadori;15.00;3
+9788804667137;Fahrenheit 451;Ray Bradbury;Romanzo distopico;Mondadori;12.00;7
+9788804619224;Il piccolo principe;Antoine de Saint-Exupéry;Romanzo per ragazzi;Mondadori;9.00;19
+9788804514194;Don Chisciotte;Miguel de Cervantes;Romanzo;Mondadori;17.00;2

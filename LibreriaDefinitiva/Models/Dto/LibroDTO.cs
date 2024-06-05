@@ -12,6 +12,7 @@ namespace LibreriaDefinitiva.Models.Dto
         public string Autore { get; set; }
         public string Genere { get; set; }
         public double Prezzo { get; set; }
+        public int Quantita { get; set; }
         public string Edizione { get; set; } //Einaudi(2019)
     }
 }
