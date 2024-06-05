@@ -103,7 +103,7 @@ namespace LibreriaDefinitiva.Controllers
 
         //Tutto corretto fino a qui
 
-
+        /*
         [HttpPatch("{isbn}", Name = "UpdatePrezzoLibro")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -118,7 +118,7 @@ namespace LibreriaDefinitiva.Controllers
 
             return Ok();
         }
-
+        */
         /*[HttpDelete("{isbn}/{quantita:int}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
