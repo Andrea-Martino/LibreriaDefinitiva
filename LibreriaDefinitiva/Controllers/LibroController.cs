@@ -116,7 +116,7 @@ namespace LibreriaDefinitiva.Controllers
             if (!books.Any()) return NotFound();
             return Ok(books);
         }
-
+        /*
 
         [HttpPatch("{isbn}", Name = "UpdatePrezzoLibro")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -125,7 +125,7 @@ namespace LibreriaDefinitiva.Controllers
         public IActionResult UpdatePrezzoLibro(string isbn, JsonPatchDocument<LibroDTO> patchDTO)
         {
             if (patchDTO == null || !_db.Libri.Any(l => l.ISBN.Equals(isbn))) return BadRequest();
-        }
+        }*/
 
         /*[HttpDelete("{isbn}/{quantita:int}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
