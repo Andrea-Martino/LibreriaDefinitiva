@@ -27,11 +27,10 @@ namespace LibreriaDefinitiva.Database
 
             var scaffali = SeedScaffali();
 
-            // Inserimento dei dati per gli scaffali
-            modelBuilder.Entity<Scaffale>().HasData(scaffali.Select((s, index) => new { ScaffaleId = -(index + 1), s.Genere }));
 
-            // Inserimento dei dati per i libri
-            var libroIdCounter = 1; // Iniziamo da 1 per evitare la chiave primaria 0
+            modelBuilder.Entity<Scaffale>().HasData(scaffali.Select((s, index) => new { ScaffaleId = (index + 1), s.Genere }));
+
+            var libroIdCounter = 1;
             foreach (var scaffale in scaffali)
             {
                 modelBuilder.Entity<Libro>().HasData(
