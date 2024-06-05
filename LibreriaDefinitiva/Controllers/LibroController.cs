@@ -174,7 +174,7 @@ namespace LibreriaDefinitiva.Controllers
         {
             return true;
         }*/
-        /*[HttpDelete("{isbn}/{quantita:int}")]
+        /*[HttpPatch("{isbn}/{quantita:int}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -194,6 +194,8 @@ namespace LibreriaDefinitiva.Controllers
                 _logger.LogError("Non esiste un libro con ISBN: " + isbn);
                 return NotFound();
             }
+
+            var libroPatch = books
         }*/
 
     
