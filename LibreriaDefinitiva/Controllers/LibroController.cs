@@ -114,7 +114,7 @@ namespace LibreriaDefinitiva.Controllers
             return Ok(books);
         }
 
-        [HttpDelete("{isbn}/{quantita:int}")]
+        /*[HttpDelete("{isbn}/{quantita:int}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -172,6 +172,29 @@ namespace LibreriaDefinitiva.Controllers
         private bool AskUserToContinue(int quantita, int availableBooks)
         {
             return true;
+        }*/
+        [HttpDelete("{isbn}/{quantita:int}")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult DeleteBook(string isbn, int quantita)
+        {
+            if (string.IsNullOrEmpty(isbn) || (isbn.Length != 13 && isbn.Length != 10))
+            {
+                _logger.LogError("ISBN non valido: " + isbn);
+                return BadRequest();
+            }
+
+            var books = _db.Scaffali.SelectMany(s => s.ScaffaleDiLibri)
+                                 .Where(l => l.Isbn.Equals(isbn))
+                                 .ToList();
+            if (!books.Any())
+            {
+                _logger.LogError("Non esiste un libro con ISBN: " + isbn);
+                return NotFound();
+            }
+
+
         }
     }
 }
