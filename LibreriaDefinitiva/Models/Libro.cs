@@ -16,6 +16,7 @@ namespace LibreriaDefinitiva.Models
         public string Autore { get; set; }
         public string Genere { get; set; }
         public string Edizione { get; set; } //Einaudi(2019)
+        public double Prezzo { get; set; }
         public int ScaffaleId { get; set; }
         public Scaffale? Scaffale { get; set; }
     }
