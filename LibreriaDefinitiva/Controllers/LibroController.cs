@@ -1,7 +1,9 @@
-﻿using LibreriaDefinitiva.Database;
+﻿using Azure;
+using LibreriaDefinitiva.Database;
 using LibreriaDefinitiva.Models;
 using LibreriaDefinitiva.Models.Dto;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -115,6 +117,16 @@ namespace LibreriaDefinitiva.Controllers
             return Ok(books);
         }
 
+
+        [HttpPatch("{isbn}", Name = "UpdatePrezzoLibro")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+
+        public IActionResult UpdatePrezzoLibro(string isbn, JsonPatchDocument<LibroDTO> patchDTO)
+        {
+            if (patchDTO == null || !_db.Libri.Any(l => l.ISBN.Equals(isbn))) return BadRequest();
+        }
+
         /*[HttpDelete("{isbn}/{quantita:int}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -198,6 +210,6 @@ namespace LibreriaDefinitiva.Controllers
             var libroPatch = books
         }*/
 
-    
+
     }
 }
