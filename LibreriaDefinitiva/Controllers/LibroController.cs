@@ -110,7 +110,7 @@ namespace LibreriaDefinitiva.Controllers
 
         public IActionResult UpdatePrezzoLibro(string isbn, JsonPatchDocument<LibroDTO> patchDTO)
         {
-            if (patchDTO == null || !_db.Libri.Any(l => l.ISBN.Equals(isbn))) return BadRequest();
+            if (patchDTO == null || !_db.Libri.Any(l => l.Isbn.Equals(isbn))) return BadRequest();
         }
 
         /*[HttpDelete("{isbn}/{quantita:int}")]
