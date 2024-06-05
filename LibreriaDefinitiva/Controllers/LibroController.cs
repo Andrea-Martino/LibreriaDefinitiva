@@ -150,7 +150,6 @@ namespace LibreriaDefinitiva.Controllers
             {
                 try
                 {
-                    _db.Libri.Remove(books[i]);
                     var libroToRemove = books[i];
 
                     if (libroToRemove != null)
