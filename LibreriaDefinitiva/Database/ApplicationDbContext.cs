@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Microsoft.Extensions.Logging;
 
 namespace LibreriaDefinitiva.Database
 {
@@ -14,6 +13,7 @@ namespace LibreriaDefinitiva.Database
         }
 
         public DbSet<Scaffale> Scaffali { get; set; }
+        public DbSet<Libro> Libri { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,10 +25,19 @@ namespace LibreriaDefinitiva.Database
                       .ValueGeneratedOnAdd();
             });
 
+            modelBuilder.Entity<Libro>(entity =>
+            {
+                entity.Property(e => e.LibroId)
+                      .ValueGeneratedOnAdd();
+            });
+
             var scaffali = SeedScaffali();
 
-
-            modelBuilder.Entity<Scaffale>().HasData(scaffali.Select((s, index) => new { ScaffaleId = (index + 1), s.Genere }));
+            modelBuilder.Entity<Scaffale>().HasData(scaffali.Select((s, index) => new Scaffale
+            {
+                ScaffaleId = (index + 1),
+                Genere = s.Genere
+            }));
 
             var libroIdCounter = 1;
             foreach (var scaffale in scaffali)
@@ -47,12 +56,11 @@ namespace LibreriaDefinitiva.Database
                             Edizione = libro.Edizione,
                             Prezzo = libro.Prezzo,
                             Quantita = libro.Quantita,
-                            ScaffaleId = scaffale.ScaffaleId
+                            ScaffaleId = (scaffali.FindIndex(s => s.Genere == libro.Genere) + 1)
                         };
                     }).ToArray());
             }
         }
-
 
         private List<Scaffale> SeedScaffali()
         {
