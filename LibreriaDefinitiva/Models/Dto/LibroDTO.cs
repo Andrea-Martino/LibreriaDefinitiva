@@ -5,7 +5,7 @@ namespace LibreriaDefinitiva.Models.Dto
     public class LibroDTO
     {
         [Required]
-        [MaxLength(13)]
+        [MaxLength(17)]
         [MinLength(10)]
         public string Isbn { get; set; }
         public string Titolo { get; set; }
