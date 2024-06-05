@@ -154,7 +154,7 @@ namespace LibreriaDefinitiva.Controllers
 
                     if (libroToRemove != null)
                     {
-                        _db.Libri.Remove(libroToRemove);
+                        //_db.Libri.Remove(libroToRemove);
                         _db.SaveChanges();
                     }
 

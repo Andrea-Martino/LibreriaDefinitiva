@@ -27,7 +27,12 @@ namespace LibreriaDefinitiva.Database
 
             // Configurazione di Isbn come chiave primaria per Libro
             modelBuilder.Entity<Libro>().HasKey(l => l.Isbn);
-
+            
+            modelBuilder.Entity<Scaffale>(entity =>
+            {
+                entity.Property(e => e.ScaffaleId)
+                      .ValueGeneratedOnAdd();
+            });
             // Seed data during model creation
             var scaffali = SeedScaffali();
             var libri = SeedLibri(scaffali);
@@ -49,6 +54,7 @@ namespace LibreriaDefinitiva.Database
             {
                 return new Scaffale
                 {
+                    ScaffaleId = (i + 1), //Rimosso meno per evitare di avere conflitti negli ID degli scaffali 
                     Genere = g
                 };
             }).OrderBy(s => s.ScaffaleId).ToList();
