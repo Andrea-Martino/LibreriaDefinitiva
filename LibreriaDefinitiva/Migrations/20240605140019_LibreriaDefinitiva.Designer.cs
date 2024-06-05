@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibreriaDefinitiva.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240605131847_LibreriaDefinitiva")]
+    [Migration("20240605140019_LibreriaDefinitiva")]
     partial class LibreriaDefinitiva
     {
         /// <inheritdoc />
@@ -76,7 +76,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Poesia epica",
                             Isbn = "9788804507379",
-                            Prezzo = 1500.0,
+                            Prezzo = 15.0,
                             Quantita = 15,
                             ScaffaleId = 1,
                             Titolo = "Divina Commedia"
@@ -88,7 +88,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo storico",
                             Isbn = "9788806213941",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 3,
                             ScaffaleId = 2,
                             Titolo = "Il Gattopardo"
@@ -100,7 +100,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo storico",
                             Isbn = "9788804508994",
-                            Prezzo = 1600.0,
+                            Prezzo = 16.0,
                             Quantita = 4,
                             ScaffaleId = 2,
                             Titolo = "Il nome della rosa"
@@ -112,7 +112,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo storico",
                             Isbn = "9788804508932",
-                            Prezzo = 1700.0,
+                            Prezzo = 17.0,
                             Quantita = 19,
                             ScaffaleId = 2,
                             Titolo = "Guerra e pace"
@@ -124,7 +124,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo storico",
                             Isbn = "9788804587978",
-                            Prezzo = 1400.0,
+                            Prezzo = 14.0,
                             Quantita = 12,
                             ScaffaleId = 2,
                             Titolo = "Memorie di Adriano"
@@ -136,7 +136,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo storico",
                             Isbn = "9788804617069",
-                            Prezzo = 1600.0,
+                            Prezzo = 16.0,
                             Quantita = 18,
                             ScaffaleId = 2,
                             Titolo = "L'isola del giorno prima"
@@ -148,7 +148,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804484144",
-                            Prezzo = 1000.0,
+                            Prezzo = 10.0,
                             Quantita = 9,
                             ScaffaleId = 3,
                             Titolo = "Orgoglio e pregiudizio"
@@ -160,7 +160,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804527025",
-                            Prezzo = 1400.0,
+                            Prezzo = 14.0,
                             Quantita = 16,
                             ScaffaleId = 3,
                             Titolo = "Anna Karenina"
@@ -172,7 +172,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804533163",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 18,
                             ScaffaleId = 3,
                             Titolo = "Madame Bovary"
@@ -184,7 +184,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804489606",
-                            Prezzo = 1800.0,
+                            Prezzo = 18.0,
                             Quantita = 20,
                             ScaffaleId = 3,
                             Titolo = "Ulysses"
@@ -196,7 +196,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804484274",
-                            Prezzo = 1000.0,
+                            Prezzo = 10.0,
                             Quantita = 6,
                             ScaffaleId = 3,
                             Titolo = "Il rosso e il nero"
@@ -208,7 +208,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804522037",
-                            Prezzo = 1000.0,
+                            Prezzo = 10.0,
                             Quantita = 17,
                             ScaffaleId = 3,
                             Titolo = "Il vecchio e il mare"
@@ -220,7 +220,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804707181",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 20,
                             ScaffaleId = 3,
                             Titolo = "Il grande Gatsby"
@@ -232,7 +232,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Arnoldo Mondadori Editore",
                             Genere = "Romanzo",
                             Isbn = "9788804642928",
-                            Prezzo = 1500.0,
+                            Prezzo = 15.0,
                             Quantita = 15,
                             ScaffaleId = 3,
                             Titolo = "Il sentiero dei nidi di ragno"
@@ -244,7 +244,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804619223",
-                            Prezzo = 1100.0,
+                            Prezzo = 11.0,
                             Quantita = 10,
                             ScaffaleId = 3,
                             Titolo = "Lo straniero"
@@ -256,7 +256,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804514193",
-                            Prezzo = 1800.0,
+                            Prezzo = 18.0,
                             Quantita = 3,
                             ScaffaleId = 3,
                             Titolo = "I miserabili"
@@ -268,7 +268,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804605370",
-                            Prezzo = 1500.0,
+                            Prezzo = 15.0,
                             Quantita = 14,
                             ScaffaleId = 3,
                             Titolo = "Lolita"
@@ -280,7 +280,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804527438",
-                            Prezzo = 1000.0,
+                            Prezzo = 10.0,
                             Quantita = 12,
                             ScaffaleId = 3,
                             Titolo = "Il fu Mattia Pascal"
@@ -292,7 +292,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804694156",
-                            Prezzo = 1300.0,
+                            Prezzo = 13.0,
                             Quantita = 5,
                             ScaffaleId = 3,
                             Titolo = "Il deserto dei tartari"
@@ -304,7 +304,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804701783",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 9,
                             ScaffaleId = 3,
                             Titolo = "Il giovane Holden"
@@ -316,7 +316,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804656758",
-                            Prezzo = 1000.0,
+                            Prezzo = 10.0,
                             Quantita = 11,
                             ScaffaleId = 3,
                             Titolo = "La ragazza di Bube"
@@ -328,7 +328,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804607626",
-                            Prezzo = 1400.0,
+                            Prezzo = 14.0,
                             Quantita = 15,
                             ScaffaleId = 3,
                             Titolo = "Giorni di un futuro passato"
@@ -340,7 +340,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804514194",
-                            Prezzo = 1700.0,
+                            Prezzo = 17.0,
                             Quantita = 2,
                             ScaffaleId = 3,
                             Titolo = "Don Chisciotte"
@@ -352,7 +352,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804706375",
-                            Prezzo = 1400.0,
+                            Prezzo = 14.0,
                             Quantita = 10,
                             ScaffaleId = 3,
                             Titolo = "Il processo"
@@ -364,7 +364,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804708065",
-                            Prezzo = 1500.0,
+                            Prezzo = 15.0,
                             Quantita = 8,
                             ScaffaleId = 3,
                             Titolo = "L'ombra del vento"
@@ -376,7 +376,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804708027",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 15,
                             ScaffaleId = 3,
                             Titolo = "La tregua"
@@ -388,7 +388,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804707037",
-                            Prezzo = 1300.0,
+                            Prezzo = 13.0,
                             Quantita = 14,
                             ScaffaleId = 3,
                             Titolo = "L'amore ai tempi del colera"
@@ -400,7 +400,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804705088",
-                            Prezzo = 1500.0,
+                            Prezzo = 15.0,
                             Quantita = 10,
                             ScaffaleId = 3,
                             Titolo = "La casa degli spiriti"
@@ -412,7 +412,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804705279",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 16,
                             ScaffaleId = 3,
                             Titolo = "Il cacciatore di aquiloni"
@@ -424,7 +424,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804704258",
-                            Prezzo = 1400.0,
+                            Prezzo = 14.0,
                             Quantita = 13,
                             ScaffaleId = 3,
                             Titolo = "Cent'anni di solitudine"
@@ -436,7 +436,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804706184",
-                            Prezzo = 1300.0,
+                            Prezzo = 13.0,
                             Quantita = 12,
                             ScaffaleId = 3,
                             Titolo = "Il profumo"
@@ -448,7 +448,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804706320",
-                            Prezzo = 1400.0,
+                            Prezzo = 14.0,
                             Quantita = 11,
                             ScaffaleId = 3,
                             Titolo = "Norwegian Wood"
@@ -460,7 +460,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804705415",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 9,
                             ScaffaleId = 3,
                             Titolo = "L'insostenibile leggerezza dell'essere"
@@ -472,7 +472,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804704470",
-                            Prezzo = 1600.0,
+                            Prezzo = 16.0,
                             Quantita = 10,
                             ScaffaleId = 3,
                             Titolo = "Il dottor Zivago"
@@ -484,7 +484,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804705569",
-                            Prezzo = 1100.0,
+                            Prezzo = 11.0,
                             Quantita = 14,
                             ScaffaleId = 3,
                             Titolo = "Le onde"
@@ -496,7 +496,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804705828",
-                            Prezzo = 900.0,
+                            Prezzo = 9.0,
                             Quantita = 20,
                             ScaffaleId = 3,
                             Titolo = "Il gabbiano Jonathan Livingston"
@@ -508,7 +508,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804706788",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 17,
                             ScaffaleId = 3,
                             Titolo = "Il buio oltre la siepe"
@@ -520,7 +520,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
                             Isbn = "9788804707587",
-                            Prezzo = 1400.0,
+                            Prezzo = 14.0,
                             Quantita = 13,
                             ScaffaleId = 3,
                             Titolo = "Il padrino"
@@ -532,7 +532,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Letteratura per ragazzi",
                             Isbn = "9788804499179",
-                            Prezzo = 900.0,
+                            Prezzo = 9.0,
                             Quantita = 7,
                             ScaffaleId = 4,
                             Titolo = "Il Piccolo Principe"
@@ -544,7 +544,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo gotico",
                             Isbn = "9788806170350",
-                            Prezzo = 1300.0,
+                            Prezzo = 13.0,
                             Quantita = 12,
                             ScaffaleId = 5,
                             Titolo = "Cime tempestose"
@@ -556,7 +556,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo gotico",
                             Isbn = "9788804673380",
-                            Prezzo = 1100.0,
+                            Prezzo = 11.0,
                             Quantita = 16,
                             ScaffaleId = 5,
                             Titolo = "Il ritratto di Dorian Gray"
@@ -568,7 +568,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo gotico",
                             Isbn = "9788804707228",
-                            Prezzo = 1300.0,
+                            Prezzo = 13.0,
                             Quantita = 11,
                             ScaffaleId = 5,
                             Titolo = "Frankenstein"
@@ -580,7 +580,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo gotico",
                             Isbn = "9788804707884",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 19,
                             ScaffaleId = 5,
                             Titolo = "Dracula"
@@ -592,7 +592,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo distopico",
                             Isbn = "9788804210366",
-                            Prezzo = 1100.0,
+                            Prezzo = 11.0,
                             Quantita = 8,
                             ScaffaleId = 6,
                             Titolo = "1984"
@@ -604,7 +604,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo distopico",
                             Isbn = "9788804667136",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 4,
                             ScaffaleId = 6,
                             Titolo = "Il mondo nuovo"
@@ -616,7 +616,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo distopico",
                             Isbn = "9788804621462",
-                            Prezzo = 1300.0,
+                            Prezzo = 13.0,
                             Quantita = 16,
                             ScaffaleId = 6,
                             Titolo = "1984"
@@ -628,7 +628,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo distopico",
                             Isbn = "9788804667137",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 7,
                             ScaffaleId = 6,
                             Titolo = "Fahrenheit 451"
@@ -640,7 +640,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Fantasy",
                             Isbn = "9788804474718",
-                            Prezzo = 2000.0,
+                            Prezzo = 20.0,
                             Quantita = 10,
                             ScaffaleId = 7,
                             Titolo = "Il signore degli anelli"
@@ -652,7 +652,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Fantasy",
                             Isbn = "9788804566621",
-                            Prezzo = 2000.0,
+                            Prezzo = 20.0,
                             Quantita = 9,
                             ScaffaleId = 7,
                             Titolo = "Cronache del ghiaccio e del fuoco - Il Trono di Spade"
@@ -664,7 +664,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo parodico",
                             Isbn = "9788804661905",
-                            Prezzo = 1800.0,
+                            Prezzo = 18.0,
                             Quantita = 5,
                             ScaffaleId = 8,
                             Titolo = "Don Chisciotte della Mancia"
@@ -676,7 +676,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo d'avventura",
                             Isbn = "9788804527827",
-                            Prezzo = 1500.0,
+                            Prezzo = 15.0,
                             Quantita = 2,
                             ScaffaleId = 9,
                             Titolo = "Moby Dick"
@@ -688,7 +688,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo d'avventura",
                             Isbn = "9788804508185",
-                            Prezzo = 1400.0,
+                            Prezzo = 14.0,
                             Quantita = 11,
                             ScaffaleId = 9,
                             Titolo = "Il conte di Montecristo"
@@ -700,7 +700,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo breve",
                             Isbn = "9788804668706",
-                            Prezzo = 800.0,
+                            Prezzo = 8.0,
                             Quantita = 1,
                             ScaffaleId = 10,
                             Titolo = "La metamorfosi"
@@ -712,7 +712,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo breve",
                             Isbn = "9788804707112",
-                            Prezzo = 1000.0,
+                            Prezzo = 10.0,
                             Quantita = 12,
                             ScaffaleId = 10,
                             Titolo = "L'amico ritrovato"
@@ -724,7 +724,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo breve",
                             Isbn = "9788804706610",
-                            Prezzo = 1000.0,
+                            Prezzo = 10.0,
                             Quantita = 8,
                             ScaffaleId = 10,
                             Titolo = "La notte"
@@ -736,7 +736,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo psicologico",
                             Isbn = "9788804482621",
-                            Prezzo = 1100.0,
+                            Prezzo = 11.0,
                             Quantita = 13,
                             ScaffaleId = 11,
                             Titolo = "La coscienza di Zeno"
@@ -748,7 +748,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo psicologico",
                             Isbn = "9788804530865",
-                            Prezzo = 1400.0,
+                            Prezzo = 14.0,
                             Quantita = 7,
                             ScaffaleId = 11,
                             Titolo = "Delitto e castigo"
@@ -760,7 +760,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo fantasy",
                             Isbn = "9788804702148",
-                            Prezzo = 1000.0,
+                            Prezzo = 10.0,
                             Quantita = 14,
                             ScaffaleId = 12,
                             Titolo = "La storia infinita"
@@ -772,7 +772,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo fantastico",
                             Isbn = "9788804512816",
-                            Prezzo = 1300.0,
+                            Prezzo = 13.0,
                             Quantita = 4,
                             ScaffaleId = 13,
                             Titolo = "Il visconte dimezzato"
@@ -784,7 +784,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo fantastico",
                             Isbn = "9788804683336",
-                            Prezzo = 1100.0,
+                            Prezzo = 11.0,
                             Quantita = 18,
                             ScaffaleId = 13,
                             Titolo = "Il barone rampante"
@@ -796,7 +796,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo per ragazzi",
                             Isbn = "9788804680371",
-                            Prezzo = 900.0,
+                            Prezzo = 9.0,
                             Quantita = 2,
                             ScaffaleId = 14,
                             Titolo = "Le avventure di Alice nel Paese delle Meraviglie"
@@ -808,7 +808,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo per ragazzi",
                             Isbn = "9788804619224",
-                            Prezzo = 900.0,
+                            Prezzo = 9.0,
                             Quantita = 19,
                             ScaffaleId = 14,
                             Titolo = "Il piccolo principe"
@@ -820,7 +820,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Romanzo giallo",
                             Isbn = "9788804707358",
-                            Prezzo = 1000.0,
+                            Prezzo = 10.0,
                             Quantita = 18,
                             ScaffaleId = 15,
                             Titolo = "Il mastino dei Baskerville"
@@ -832,7 +832,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Thriller",
                             Isbn = "9788804708096",
-                            Prezzo = 1300.0,
+                            Prezzo = 13.0,
                             Quantita = 15,
                             ScaffaleId = 16,
                             Titolo = "Il Codice Da Vinci"
@@ -844,7 +844,7 @@ namespace LibreriaDefinitiva.Migrations
                             Edizione = "Mondadori",
                             Genere = "Thriller",
                             Isbn = "9788804708126",
-                            Prezzo = 1200.0,
+                            Prezzo = 12.0,
                             Quantita = 12,
                             ScaffaleId = 16,
                             Titolo = "Angeli e demoni"
