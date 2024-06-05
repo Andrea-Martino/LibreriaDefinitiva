@@ -1,13 +1,13 @@
 ﻿using LibreriaDefinitiva.Database;
 using LibreriaDefinitiva.Models;
 using LibreriaDefinitiva.Models.Dto;
-using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.IO.IsolatedStorage;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace LibreriaDefinitiva.Controllers
 {
@@ -24,14 +24,13 @@ namespace LibreriaDefinitiva.Controllers
             _logger = logger;
         }
 
-
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [HttpGet("GetAllLibri", Name = "GetAllLibri")]
         public IActionResult GetAllBooks()
         {
             _logger.LogInformation("Get libri nello scaffale");
-            var books = _db.Libreria.SelectMany(s => s.ScaffaleDiLibri);
+            var books = _db.Scaffali.SelectMany(s => s.ScaffaleDiLibri);
 
             if (books == null || !books.Any())
             {
@@ -49,7 +48,7 @@ namespace LibreriaDefinitiva.Controllers
             if (newBook == null) return BadRequest();
             if (newBook.Isbn.Length != 13 && newBook.Isbn.Length != 10) return BadRequest(newBook.Isbn);
 
-            var scaffale = _db.Libreria.FirstOrDefault(s => s.Genere == newBook.Genere);
+            var scaffale = _db.Scaffali.FirstOrDefault(s => s.Genere == newBook.Genere);
             if (scaffale == null)
             {
                 scaffale = new Scaffale
@@ -57,7 +56,7 @@ namespace LibreriaDefinitiva.Controllers
                     Genere = newBook.Genere,
                     ScaffaleDiLibri = new List<Libro>()
                 };
-                _db.Libreria.Add(scaffale);
+                _db.Scaffali.Add(scaffale);
             }
 
             Libro model = new()
@@ -88,11 +87,11 @@ namespace LibreriaDefinitiva.Controllers
                 return BadRequest();
             }
 
-            var book = _db.Libreria
+            var book = _db.Scaffali
                               .SelectMany(s => s.ScaffaleDiLibri)
                               .Where(b => b.Isbn.Equals(isbn))
                               .ToList().FirstOrDefault();
-            if (book == null)   return NotFound();
+            if (book == null) return NotFound();
             return Ok(book);
         }
 
@@ -107,7 +106,7 @@ namespace LibreriaDefinitiva.Controllers
                 _logger.LogError("Titolo o autore non validi");
                 return BadRequest();
             }
-            var books = _db.Libreria
+            var books = _db.Scaffali
                                 .SelectMany(s => s.ScaffaleDiLibri)
                                 .Where(b => b.Titolo.Contains(query) || b.Autore.Contains(query))
                                 .ToList();
@@ -115,7 +114,7 @@ namespace LibreriaDefinitiva.Controllers
             return Ok(books);
         }
 
-        [HttpDelete("{isbn}, {quantita: int}")]
+        [HttpDelete("{isbn}/{quantita:int}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -127,7 +126,7 @@ namespace LibreriaDefinitiva.Controllers
                 return BadRequest();
             }
 
-            var books = _db.Libreria.SelectMany(s => s.ScaffaleDiLibri)
+            var books = _db.Scaffali.SelectMany(s => s.ScaffaleDiLibri)
                                  .Where(l => l.Isbn.Equals(isbn))
                                  .ToList();
 
@@ -158,7 +157,7 @@ namespace LibreriaDefinitiva.Controllers
                         _db.SaveChanges();
                     }
 
-                    var scaffale = _db.Libreria.ToList().FirstOrDefault(s => s.ScaffaleDiLibri.Contains(libroToRemove));
+                    var scaffale = _db.Scaffali.ToList().FirstOrDefault(s => s.ScaffaleDiLibri.Contains(libroToRemove));
                     scaffale.ScaffaleDiLibri.Remove(libroToRemove);
                     _db.SaveChanges();
                 }
@@ -169,45 +168,6 @@ namespace LibreriaDefinitiva.Controllers
             }
             return NoContent();
         }
-        /*
-        [HttpPatch("{isbn}", Name = "UpdatePartialScaffale")]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult UpdatePartialScaffale(string isbn, JsonPatchDocument<LibroDTO> patchDTO)
-        {
-            if (patchDTO == null || !_db.Libri.Any(l => l.Isbn.Equals(isbn))) return BadRequest();
-
-            var libro = _db.Libri.AsNoTracking().FirstOrDefault(l => l.Isbn == isbn);
-            if (libro == null) return NotFound();
-
-            LibroDTO libroDTO = new()
-            {
-                Isbn = libro.Isbn,
-                Autore = libro.Autore,
-                Genere = libro.Genere,
-                Titolo = libro.Titolo,
-            };
-
-            patchDTO.ApplyTo(libroDTO);
-
-            Libro model = new Libro()
-            {
-                Isbn = libroDTO.Isbn,
-                Autore = libroDTO.Autore,
-                Genere = libroDTO.Genere,
-                Titolo = libroDTO.Titolo,
-            };
-
-            _db.Libri.Update(model);
-            _db.SaveChanges();
-
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            return CreatedAtAction(nameof(SearchBookByIsbn), new { isbn = libro.Isbn }, libro);
-        }
-        */
-
-
 
         private bool AskUserToContinue(int quantita, int availableBooks)
         {
