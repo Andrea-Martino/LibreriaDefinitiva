@@ -1,4 +1,4 @@
-ISBN;Titolo;Autore;Genere;Edizione;Prezzo;Quantità
+ISBN;Titolo;Autore;Genere;Edizione;Prezzo;Quantita
 9788804507379;Divina Commedia;Dante Alighieri;Poesia epica;Mondadori;15.00;15
 9788806213941;Il Gattopardo;Giuseppe Tomasi di Lampedusa;Romanzo storico;Mondadori;12.00;3
 9788804484144;Orgoglio e pregiudizio;Jane Austen;Romanzo;Mondadori;10.00;9
@@ -39,7 +39,28 @@ ISBN;Titolo;Autore;Genere;Edizione;Prezzo;Quantità
 9788804656758;La ragazza di Bube;Carlo Cassola;Romanzo;Mondadori;10.00;11
 9788804607626;Giorni di un futuro passato;Isaac Asimov;Romanzo;Mondadori;14.00;15
 9788804621462;1984;George Orwell;Romanzo distopico;Mondadori;13.00;16
-9788804673381;Il nome della rosa;Umberto Eco;Romanzo storico;Mondadori;15.00;3
 9788804667137;Fahrenheit 451;Ray Bradbury;Romanzo distopico;Mondadori;12.00;7
 9788804619224;Il piccolo principe;Antoine de Saint-Exupéry;Romanzo per ragazzi;Mondadori;9.00;19
 9788804514194;Don Chisciotte;Miguel de Cervantes;Romanzo;Mondadori;17.00;2
+9788804706375;Il processo;Franz Kafka;Romanzo;Mondadori;14.00;10
+9788804707112;L'amico ritrovato;Fred Uhlman;Romanzo breve;Mondadori;10.00;12
+9788804708065;L'ombra del vento;Carlos Ruiz Zafón;Romanzo;Mondadori;15.00;8
+9788804708027;La tregua;Primo Levi;Romanzo;Mondadori;12.00;15
+9788804707037;L'amore ai tempi del colera;Gabriel Garcia Marquez;Romanzo;Mondadori;13.00;14
+9788804705088;La casa degli spiriti;Isabel Allende;Romanzo;Mondadori;15.00;10
+9788804705279;Il cacciatore di aquiloni;Khaled Hosseini;Romanzo;Mondadori;12.00;16
+9788804704258;Cent'anni di solitudine;Gabriel Garcia Marquez;Romanzo;Mondadori;14.00;13
+9788804706184;Il profumo;Patrick Süskind;Romanzo;Mondadori;13.00;12
+9788804706320;Norwegian Wood;Haruki Murakami;Romanzo;Mondadori;14.00;11
+9788804705415;L'insostenibile leggerezza dell'essere;Milan Kundera;Romanzo;Mondadori;12.00;9
+9788804704470;Il dottor Zivago;Boris Pasternak;Romanzo;Mondadori;16.00;10
+9788804705569;Le onde;Virginia Woolf;Romanzo;Mondadori;11.00;14
+9788804705828;Il gabbiano Jonathan Livingston;Richard Bach;Romanzo;Mondadori;9.00;20
+9788804706788;Il buio oltre la siepe;Harper Lee;Romanzo;Mondadori;12.00;17
+9788804706610;La notte;Elie Wiesel;Romanzo breve;Mondadori;10.00;8
+9788804707228;Frankenstein;Mary Shelley;Romanzo gotico;Mondadori;13.00;11
+9788804707358;Il mastino dei Baskerville;Arthur Conan Doyle;Romanzo giallo;Mondadori;10.00;18
+9788804707587;Il padrino;Mario Puzo;Romanzo;Mondadori;14.00;13
+9788804707884;Dracula;Bram Stoker;Romanzo gotico;Mondadori;12.00;19
+9788804708096;Il Codice Da Vinci;Dan Brown;Thriller;Mondadori;13.00;15
+9788804708126;Angeli e demoni;Dan Brown;Thriller;Mondadori;12.00;12

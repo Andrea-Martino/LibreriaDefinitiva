@@ -141,18 +141,6 @@ namespace LibreriaDefinitiva.Migrations
                         new
                         {
                             LibroId = 7,
-                            Autore = "Umberto Eco",
-                            Edizione = "Mondadori",
-                            Genere = "Romanzo storico",
-                            Isbn = "9788804673381",
-                            Prezzo = 1500.0,
-                            Quantita = 3,
-                            ScaffaleId = 2,
-                            Titolo = "Il nome della rosa"
-                        },
-                        new
-                        {
-                            LibroId = 8,
                             Autore = "Jane Austen",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -164,7 +152,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 9,
+                            LibroId = 8,
                             Autore = "Lev Tolstoj",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -176,7 +164,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 10,
+                            LibroId = 9,
                             Autore = "Gustave Flaubert",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -188,7 +176,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 11,
+                            LibroId = 10,
                             Autore = "James Joyce",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -200,7 +188,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 12,
+                            LibroId = 11,
                             Autore = "Stendhal",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -212,7 +200,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 13,
+                            LibroId = 12,
                             Autore = "Ernest Hemingway",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -224,7 +212,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 14,
+                            LibroId = 13,
                             Autore = "F. Scott Fitzgerald",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -236,7 +224,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 15,
+                            LibroId = 14,
                             Autore = "Italo Calvino",
                             Edizione = "Arnoldo Mondadori Editore",
                             Genere = "Romanzo",
@@ -248,7 +236,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 16,
+                            LibroId = 15,
                             Autore = "Albert Camus",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -260,7 +248,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 17,
+                            LibroId = 16,
                             Autore = "Victor Hugo",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -272,7 +260,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 18,
+                            LibroId = 17,
                             Autore = "Vladimir Nabokov",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -284,7 +272,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 19,
+                            LibroId = 18,
                             Autore = "Luigi Pirandello",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -296,7 +284,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 20,
+                            LibroId = 19,
                             Autore = "Dino Buzzati",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -308,7 +296,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 21,
+                            LibroId = 20,
                             Autore = "J.D. Salinger",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -320,7 +308,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 22,
+                            LibroId = 21,
                             Autore = "Carlo Cassola",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -332,7 +320,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 23,
+                            LibroId = 22,
                             Autore = "Isaac Asimov",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -344,7 +332,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 24,
+                            LibroId = 23,
                             Autore = "Miguel de Cervantes",
                             Edizione = "Mondadori",
                             Genere = "Romanzo",
@@ -356,7 +344,187 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
+                            LibroId = 24,
+                            Autore = "Franz Kafka",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804706375",
+                            Prezzo = 1400.0,
+                            Quantita = 10,
+                            ScaffaleId = 3,
+                            Titolo = "Il processo"
+                        },
+                        new
+                        {
                             LibroId = 25,
+                            Autore = "Carlos Ruiz Zafón",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804708065",
+                            Prezzo = 1500.0,
+                            Quantita = 8,
+                            ScaffaleId = 3,
+                            Titolo = "L'ombra del vento"
+                        },
+                        new
+                        {
+                            LibroId = 26,
+                            Autore = "Primo Levi",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804708027",
+                            Prezzo = 1200.0,
+                            Quantita = 15,
+                            ScaffaleId = 3,
+                            Titolo = "La tregua"
+                        },
+                        new
+                        {
+                            LibroId = 27,
+                            Autore = "Gabriel Garcia Marquez",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804707037",
+                            Prezzo = 1300.0,
+                            Quantita = 14,
+                            ScaffaleId = 3,
+                            Titolo = "L'amore ai tempi del colera"
+                        },
+                        new
+                        {
+                            LibroId = 28,
+                            Autore = "Isabel Allende",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804705088",
+                            Prezzo = 1500.0,
+                            Quantita = 10,
+                            ScaffaleId = 3,
+                            Titolo = "La casa degli spiriti"
+                        },
+                        new
+                        {
+                            LibroId = 29,
+                            Autore = "Khaled Hosseini",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804705279",
+                            Prezzo = 1200.0,
+                            Quantita = 16,
+                            ScaffaleId = 3,
+                            Titolo = "Il cacciatore di aquiloni"
+                        },
+                        new
+                        {
+                            LibroId = 30,
+                            Autore = "Gabriel Garcia Marquez",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804704258",
+                            Prezzo = 1400.0,
+                            Quantita = 13,
+                            ScaffaleId = 3,
+                            Titolo = "Cent'anni di solitudine"
+                        },
+                        new
+                        {
+                            LibroId = 31,
+                            Autore = "Patrick Süskind",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804706184",
+                            Prezzo = 1300.0,
+                            Quantita = 12,
+                            ScaffaleId = 3,
+                            Titolo = "Il profumo"
+                        },
+                        new
+                        {
+                            LibroId = 32,
+                            Autore = "Haruki Murakami",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804706320",
+                            Prezzo = 1400.0,
+                            Quantita = 11,
+                            ScaffaleId = 3,
+                            Titolo = "Norwegian Wood"
+                        },
+                        new
+                        {
+                            LibroId = 33,
+                            Autore = "Milan Kundera",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804705415",
+                            Prezzo = 1200.0,
+                            Quantita = 9,
+                            ScaffaleId = 3,
+                            Titolo = "L'insostenibile leggerezza dell'essere"
+                        },
+                        new
+                        {
+                            LibroId = 34,
+                            Autore = "Boris Pasternak",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804704470",
+                            Prezzo = 1600.0,
+                            Quantita = 10,
+                            ScaffaleId = 3,
+                            Titolo = "Il dottor Zivago"
+                        },
+                        new
+                        {
+                            LibroId = 35,
+                            Autore = "Virginia Woolf",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804705569",
+                            Prezzo = 1100.0,
+                            Quantita = 14,
+                            ScaffaleId = 3,
+                            Titolo = "Le onde"
+                        },
+                        new
+                        {
+                            LibroId = 36,
+                            Autore = "Richard Bach",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804705828",
+                            Prezzo = 900.0,
+                            Quantita = 20,
+                            ScaffaleId = 3,
+                            Titolo = "Il gabbiano Jonathan Livingston"
+                        },
+                        new
+                        {
+                            LibroId = 37,
+                            Autore = "Harper Lee",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804706788",
+                            Prezzo = 1200.0,
+                            Quantita = 17,
+                            ScaffaleId = 3,
+                            Titolo = "Il buio oltre la siepe"
+                        },
+                        new
+                        {
+                            LibroId = 38,
+                            Autore = "Mario Puzo",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo",
+                            Isbn = "9788804707587",
+                            Prezzo = 1400.0,
+                            Quantita = 13,
+                            ScaffaleId = 3,
+                            Titolo = "Il padrino"
+                        },
+                        new
+                        {
+                            LibroId = 39,
                             Autore = "Antoine de Saint-Exupéry",
                             Edizione = "Mondadori",
                             Genere = "Letteratura per ragazzi",
@@ -368,7 +536,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 26,
+                            LibroId = 40,
                             Autore = "Emily Brontë",
                             Edizione = "Mondadori",
                             Genere = "Romanzo gotico",
@@ -380,7 +548,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 27,
+                            LibroId = 41,
                             Autore = "Oscar Wilde",
                             Edizione = "Mondadori",
                             Genere = "Romanzo gotico",
@@ -392,7 +560,31 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 28,
+                            LibroId = 42,
+                            Autore = "Mary Shelley",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo gotico",
+                            Isbn = "9788804707228",
+                            Prezzo = 1300.0,
+                            Quantita = 11,
+                            ScaffaleId = 5,
+                            Titolo = "Frankenstein"
+                        },
+                        new
+                        {
+                            LibroId = 43,
+                            Autore = "Bram Stoker",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo gotico",
+                            Isbn = "9788804707884",
+                            Prezzo = 1200.0,
+                            Quantita = 19,
+                            ScaffaleId = 5,
+                            Titolo = "Dracula"
+                        },
+                        new
+                        {
+                            LibroId = 44,
                             Autore = "George Orwell",
                             Edizione = "Mondadori",
                             Genere = "Romanzo distopico",
@@ -404,7 +596,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 29,
+                            LibroId = 45,
                             Autore = "Aldous Huxley",
                             Edizione = "Mondadori",
                             Genere = "Romanzo distopico",
@@ -416,7 +608,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 30,
+                            LibroId = 46,
                             Autore = "George Orwell",
                             Edizione = "Mondadori",
                             Genere = "Romanzo distopico",
@@ -428,7 +620,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 31,
+                            LibroId = 47,
                             Autore = "Ray Bradbury",
                             Edizione = "Mondadori",
                             Genere = "Romanzo distopico",
@@ -440,7 +632,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 32,
+                            LibroId = 48,
                             Autore = "J.R.R. Tolkien",
                             Edizione = "Mondadori",
                             Genere = "Fantasy",
@@ -452,7 +644,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 33,
+                            LibroId = 49,
                             Autore = "George R.R. Martin",
                             Edizione = "Mondadori",
                             Genere = "Fantasy",
@@ -464,7 +656,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 34,
+                            LibroId = 50,
                             Autore = "Miguel de Cervantes",
                             Edizione = "Mondadori",
                             Genere = "Romanzo parodico",
@@ -476,7 +668,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 35,
+                            LibroId = 51,
                             Autore = "Herman Melville",
                             Edizione = "Mondadori",
                             Genere = "Romanzo d'avventura",
@@ -488,7 +680,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 36,
+                            LibroId = 52,
                             Autore = "Alexandre Dumas",
                             Edizione = "Mondadori",
                             Genere = "Romanzo d'avventura",
@@ -500,7 +692,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 37,
+                            LibroId = 53,
                             Autore = "Franz Kafka",
                             Edizione = "Mondadori",
                             Genere = "Romanzo breve",
@@ -512,7 +704,31 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 38,
+                            LibroId = 54,
+                            Autore = "Fred Uhlman",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo breve",
+                            Isbn = "9788804707112",
+                            Prezzo = 1000.0,
+                            Quantita = 12,
+                            ScaffaleId = 10,
+                            Titolo = "L'amico ritrovato"
+                        },
+                        new
+                        {
+                            LibroId = 55,
+                            Autore = "Elie Wiesel",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo breve",
+                            Isbn = "9788804706610",
+                            Prezzo = 1000.0,
+                            Quantita = 8,
+                            ScaffaleId = 10,
+                            Titolo = "La notte"
+                        },
+                        new
+                        {
+                            LibroId = 56,
                             Autore = "Italo Svevo",
                             Edizione = "Mondadori",
                             Genere = "Romanzo psicologico",
@@ -524,7 +740,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 39,
+                            LibroId = 57,
                             Autore = "Fëdor Dostoevskij",
                             Edizione = "Mondadori",
                             Genere = "Romanzo psicologico",
@@ -536,7 +752,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 40,
+                            LibroId = 58,
                             Autore = "Michael Ende",
                             Edizione = "Mondadori",
                             Genere = "Romanzo fantasy",
@@ -548,7 +764,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 41,
+                            LibroId = 59,
                             Autore = "Italo Calvino",
                             Edizione = "Mondadori",
                             Genere = "Romanzo fantastico",
@@ -560,7 +776,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 42,
+                            LibroId = 60,
                             Autore = "Italo Calvino",
                             Edizione = "Mondadori",
                             Genere = "Romanzo fantastico",
@@ -572,7 +788,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 43,
+                            LibroId = 61,
                             Autore = "Lewis Carroll",
                             Edizione = "Mondadori",
                             Genere = "Romanzo per ragazzi",
@@ -584,7 +800,7 @@ namespace LibreriaDefinitiva.Migrations
                         },
                         new
                         {
-                            LibroId = 44,
+                            LibroId = 62,
                             Autore = "Antoine de Saint-Exupéry",
                             Edizione = "Mondadori",
                             Genere = "Romanzo per ragazzi",
@@ -593,6 +809,42 @@ namespace LibreriaDefinitiva.Migrations
                             Quantita = 19,
                             ScaffaleId = 14,
                             Titolo = "Il piccolo principe"
+                        },
+                        new
+                        {
+                            LibroId = 63,
+                            Autore = "Arthur Conan Doyle",
+                            Edizione = "Mondadori",
+                            Genere = "Romanzo giallo",
+                            Isbn = "9788804707358",
+                            Prezzo = 1000.0,
+                            Quantita = 18,
+                            ScaffaleId = 15,
+                            Titolo = "Il mastino dei Baskerville"
+                        },
+                        new
+                        {
+                            LibroId = 64,
+                            Autore = "Dan Brown",
+                            Edizione = "Mondadori",
+                            Genere = "Thriller",
+                            Isbn = "9788804708096",
+                            Prezzo = 1300.0,
+                            Quantita = 15,
+                            ScaffaleId = 16,
+                            Titolo = "Il Codice Da Vinci"
+                        },
+                        new
+                        {
+                            LibroId = 65,
+                            Autore = "Dan Brown",
+                            Edizione = "Mondadori",
+                            Genere = "Thriller",
+                            Isbn = "9788804708126",
+                            Prezzo = 1200.0,
+                            Quantita = 12,
+                            ScaffaleId = 16,
+                            Titolo = "Angeli e demoni"
                         });
                 });
 
@@ -682,6 +934,16 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             ScaffaleId = 14,
                             Genere = "Romanzo per ragazzi"
+                        },
+                        new
+                        {
+                            ScaffaleId = 15,
+                            Genere = "Romanzo giallo"
+                        },
+                        new
+                        {
+                            ScaffaleId = 16,
+                            Genere = "Thriller"
                         });
                 });
 

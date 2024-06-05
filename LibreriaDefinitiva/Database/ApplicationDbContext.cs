@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace LibreriaDefinitiva.Database
 {
@@ -14,7 +15,6 @@ namespace LibreriaDefinitiva.Database
 
         public DbSet<Scaffale> Scaffali { get; set; }
         public DbSet<Libro> Libri { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -66,17 +66,30 @@ namespace LibreriaDefinitiva.Database
         {
             var lines = File.ReadAllLines("Libri.csv");
 
+            if (lines.Length <= 1)
+            {
+                throw new Exception("Il file CSV è vuoto");
+            }
+
             var libri = lines.Skip(1)
                              .Select(line => line.Split(';'))
-                             .Select(parts => new Libro
+                             .Select(parts =>
                              {
-                                 Isbn = parts[0],
-                                 Titolo = parts[1],
-                                 Autore = parts[2],
-                                 Genere = parts[3],
-                                 Edizione = parts[4],
-                                 Prezzo = double.Parse(parts[5]),
-                                 Quantita = int.Parse(parts[6])
+                                 if (parts.Length < 7)
+                                 {
+                                     throw new Exception("Riga non valida nel CSV" + lines);
+                                 }
+
+                                 return new Libro
+                                 {
+                                     Isbn = parts[0],
+                                     Titolo = parts[1],
+                                     Autore = parts[2],
+                                     Genere = parts[3],
+                                     Edizione = parts[4],
+                                     Prezzo = double.Parse(parts[5]),
+                                     Quantita = int.Parse(parts[6])
+                                 };
                              })
                              .ToList();
 
