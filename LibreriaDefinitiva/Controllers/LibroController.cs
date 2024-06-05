@@ -107,10 +107,16 @@ namespace LibreriaDefinitiva.Controllers
         [HttpPatch("{isbn}", Name = "UpdatePrezzoLibro")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created)]
-
         public IActionResult UpdatePrezzoLibro(string isbn, JsonPatchDocument<LibroDTO> patchDTO)
         {
-            if (patchDTO == null || !_db.Libri.Any(l => l.Isbn.Equals(isbn))) return BadRequest();
+            if (patchDTO == null || !_db.Libri.Any(l => l.Isbn.Equals(isbn)))
+            {
+                return BadRequest();
+            }
+
+            // Add your code here to update the price of the book with the given ISBN using the patchDTO
+
+            return Ok();
         }
 
         /*[HttpDelete("{isbn}/{quantita:int}")]
