@@ -68,7 +68,7 @@ namespace LibreriaDefinitiva.Database
                                  Autore = parts[2],
                                  Genere = parts[3],
                                  Edizione = parts[4],
-                                 Prezzo = double.Parse(parts[5]), 
+                                 Prezzo = double.Parse(parts[5]),
                                  Quantita = int.Parse(parts[6])
                              })
                              .ToList();

@@ -66,6 +66,7 @@ namespace LibreriaDefinitiva.Controllers
                 Autore = newBook.Autore,
                 Genere = newBook.Genere,
                 Edizione = newBook.Edizione,
+                Quantita = newBook.Quantita,
                 ScaffaleId = scaffale.ScaffaleId,
                 Scaffale = scaffale
             };
@@ -173,7 +174,7 @@ namespace LibreriaDefinitiva.Controllers
         {
             return true;
         }*/
-        [HttpDelete("{isbn}/{quantita:int}")]
+        /*[HttpDelete("{isbn}/{quantita:int}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -193,8 +194,8 @@ namespace LibreriaDefinitiva.Controllers
                 _logger.LogError("Non esiste un libro con ISBN: " + isbn);
                 return NotFound();
             }
+        }*/
 
-
-        }
+    
     }
 }
