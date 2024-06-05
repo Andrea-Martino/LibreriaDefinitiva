@@ -8,10 +8,6 @@
     background-color: #aeaeac;
 }
 
-image {
-    box-shadow: 10px 10px 5px #dedede;
-}
-
 nav {
     background-color: #333;
     color: white;
@@ -20,6 +16,7 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+
     nav #logo {
         height: 30px; /* Imposta l'altezza desiderata */
         width: auto; /* Lascia che la larghezza si adatti proporzionalmente */
@@ -43,6 +40,17 @@ nav {
     align-items: center;
 }
 
+.nome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    height: 100px;
+    width: auto;
+}
+
 form {
     max-width: 600px;
     margin: auto;
@@ -57,6 +65,7 @@ form {
         width: 100%;
         padding: 0.5rem;
         margin-top: 0.5rem;
+        background-color: #fff;
     }
 
     form button {

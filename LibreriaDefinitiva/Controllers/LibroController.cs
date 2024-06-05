@@ -150,7 +150,7 @@ namespace LibreriaDefinitiva.Controllers
             {
                 try
                 {
-                    _db.Libri.Remove(books[i]);
+                    //_db.Libri.Remove(books[i]);
                     var libroToRemove = books[i];
                     var scaffale = _db.Libreria.ToList().FirstOrDefault(s => s.ScaffaleDiLibri.Contains(libroToRemove));
                     scaffale.ScaffaleDiLibri.Remove(libroToRemove);
