@@ -103,7 +103,7 @@ namespace LibreriaDefinitiva.Controllers
 
         //Tutto corretto fino a qui
 
-
+        /*
         [HttpPatch("{isbn}", Name = "UpdatePrezzoLibro")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -112,7 +112,7 @@ namespace LibreriaDefinitiva.Controllers
         {
             if (patchDTO == null || !_db.Libri.Any(l => l.ISBN.Equals(isbn))) return BadRequest();
         }
-
+        */
         /*[HttpDelete("{isbn}/{quantita:int}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
