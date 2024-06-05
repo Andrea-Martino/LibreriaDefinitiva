@@ -27,10 +27,11 @@ namespace LibreriaDefinitiva.Database
 
             var scaffali = SeedScaffali();
 
-           
-            modelBuilder.Entity<Scaffale>().HasData(scaffali.Select((s, index) => new { ScaffaleId = index+1, s.Genere }));
+            // Inserimento dei dati per gli scaffali
+            modelBuilder.Entity<Scaffale>().HasData(scaffali.Select((s, index) => new { ScaffaleId = -(index + 1), s.Genere }));
 
-            var libroIdCounter = 1; 
+            // Inserimento dei dati per i libri
+            var libroIdCounter = 1; // Iniziamo da 1 per evitare la chiave primaria 0
             foreach (var scaffale in scaffali)
             {
                 modelBuilder.Entity<Libro>().HasData(
@@ -58,10 +59,6 @@ namespace LibreriaDefinitiva.Database
         {
             var lines = File.ReadAllLines("Libri.csv");
 
-            var generi = lines.Skip(1)
-                             .Select(line => line.Split(';'))
-                             .Select(parts => parts[3]).ToList();
-
             var libri = lines.Skip(1)
                              .Select(line => line.Split(';'))
                              .Select(parts => new Libro
@@ -72,9 +69,8 @@ namespace LibreriaDefinitiva.Database
                                  Genere = parts[3],
                                  Edizione = parts[4],
                                  Prezzo = double.Parse(parts[5]),
-                                 Quantita = int.Parse(parts[6]),
-                                 ScaffaleId = generi.IndexOf(parts[3]) + 1)
-                             });
+                                 Quantita = int.Parse(parts[6])
+                             })
                              .ToList();
 
             var genres = libri.Select(l => l.Genere)
