@@ -34,7 +34,7 @@ namespace LibreriaDefinitiva.Controllers
             _logger.LogInformation("Get tutti i libri nella libreria");
             var books = _db.Scaffali.SelectMany(s => s.ScaffaleDiLibri);
 
-             if (books == null || !books.Any())
+            if (books == null || !books.Any())
             {
                 return NoContent();
             }
