@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
             loop: true,
             margin: 10,
             nav: true,
-            autoplay: true, // Abilita l'autoplay
-            autoplayTimeout: 3000, // Imposta il tempo di visualizzazione di ogni slide in millisecondi
+            autoplay: true,
+            autoplayTimeout: 3000,
             responsive: {
                 0: {
                     items: 1
@@ -60,13 +60,17 @@ function fetchAllBooks() {
 function searchBooks(event) {
     event.preventDefault();
     let query = document.getElementById('search-title').value;
-    fetch(`https://localhost:44315/api/Libro/GetLibro?query=${query}`)
-        .then(response => response.json())
-        .then(data => {
-            let tbody = document.querySelector('table tbody');
-            tbody.innerHTML = '';
-            data.forEach(book => {
-                let row = `<tr>
+    if (!query) {
+        alert('Inserire un titolo per la ricerca!');)
+    }
+    else {
+        fetch(`https://localhost:44315/api/Libro/GetLibro?query=${query}`)
+            .then(response => response.json())
+            .then(data => {
+                let tbody = document.querySelector('table tbody');
+                tbody.innerHTML = '';
+                data.forEach(book => {
+                    let row = `<tr>
                     <td>${book.isbn}</td>
                     <td>${book.titolo}</td>
                     <td>${book.autore}</td>
@@ -75,10 +79,11 @@ function searchBooks(event) {
                     <td>${book.prezzo}</td>
                     <td>${book.quantita}</td>
                 </tr>`;
-                tbody.innerHTML += row;
-            });
-        })
-        .catch(error => console.error('Errore nella ricerca dei libri:', error));
+                    tbody.innerHTML += row;
+                });
+            })
+            .catch(error => console.error('Errore nella ricerca dei libri:', error));
+    }
 }
 
 $(document).ready(function () {
@@ -91,29 +96,43 @@ $(document).ready(function () {
         var edizione = $('#Edizione').val();
         var prezzo = $('#Prezzo').val();
         var quantita = parseInt($('#Quantità').val());
+
+        if (!titolo || !autore || !isbn || !genere || !edizione || !prezzo || !quantita) {
+            alert('Compilare tutti i campi per aggiungere un libro!');
+            return;
+        }
+        else if (prezzo <= 0 || quantita <= 0)){
+            alert('Prezzo e quantità devono essere maggiori di 0!');)
+        }
+        else if (isbn.length != 13 && isbn.length != 10 && isbn.length != 17) {
+            alert('L\'ISBN deve essere di 10, 13 o 17 caratteri!');
+            return;
+        }
+        else {
+            var newBook = {
+                Titolo: titolo,
+                Autore: autore,
+                Isbn: isbn,
+                Genere: genere,
+                Edizione: edizione,
+                Prezzo: prezzo,
+                Quantita: quantita
+            };
+
+            $.ajax({
+                url: '../../Controllers/LibroController.cs/AddBook()',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(newBook),
+                success: function (data, textStatus, xhr) {
+                    alert('Libro aggiunto con successo!');
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert('Errore durante l\'aggiunta del libro: ' + xhr.responseJSON.error);
+                }
+            });
+        }
         
-        var newBook = {
-            Titolo: titolo,
-            Autore: autore,
-            Isbn: isbn,
-            Genere: genere,
-            Edizione: edizione,
-            Prezzo: prezzo,
-            Quantita: quantita
-        };
-        
-        $.ajax({
-            url: '../../Controllers/LibroController.cs/AddBook()',
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(newBook),
-            success: function (data, textStatus, xhr) {
-                alert('Libro aggiunto con successo!');
-            },
-            error: function (xhr, textStatus, errorThrown) {
-                alert('Errore durante l\'aggiunta del libro: ' + xhr.responseJSON.error);
-            }
-        });
     });
 });
 // Funzione per filtrare i libri per genere
