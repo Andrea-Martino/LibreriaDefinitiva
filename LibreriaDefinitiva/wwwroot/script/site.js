@@ -37,25 +37,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function fetchAllBooks() {
     fetch('https://localhost:44315/api/Libro/GetAllLibri')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             let tbody = document.querySelector('table tbody');
             tbody.innerHTML = '';
-            data.forEach(book => {
-                let row = `<tr>
-                    <td>${book.isbn}</td>
-                    <td>${book.titolo}</td>
-                    <td>${book.autore}</td>
-                    <td>${book.genere}</td>
-                    <td>${book.edizione}</td>
-                    <td>${book.prezzo}</td>
-                    <td>${book.quantita}</td>
-                </tr>`;
-                tbody.innerHTML += row;
-            });
+            if (data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7">No books available</td></tr>';
+            } else {
+                data.forEach(book => {
+                    let row = `<tr>
+                        <td>${book.isbn}</td>
+                        <td>${book.titolo}</td>
+                        <td>${book.autore}</td>
+                        <td>${book.genere}</td>
+                        <td>${book.edizione}</td>
+                        <td>${book.prezzo}</td>
+                        <td>${book.quantita}</td>
+                    </tr>`;
+                    tbody.innerHTML += row;
+                });
+            }
         })
         .catch(error => console.error('Errore nella fetch dei libri:', error));
 }
+
 
 function searchBooks(event) {
     event.preventDefault();
