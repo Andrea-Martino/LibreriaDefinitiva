@@ -109,7 +109,7 @@ namespace LibreriaDefinitiva.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult RemoveBooks(string isbn, int quantita)
         {
-            var libroTrovato = _db.Libri.FirstOrDefault(l => l.ISBN == isbn);
+            var libroTrovato = _db.Libri.FirstOrDefault(l => l.Isbn == isbn);
 
             if (libroTrovato == null)
             {
@@ -134,7 +134,7 @@ namespace LibreriaDefinitiva.Controllers
 
             return libroTrovato.Quantita == 0 ? NoContent() : Ok(libroTrovato);
         }
-        //Tutto corretto fino a qui
+        //Tutto corretto fino a qui DDP
 
     }
 }
