@@ -38,6 +38,9 @@ namespace LibreriaDefinitiva.Database
                 ScaffaleId = (index + 1),
                 Genere = s.Genere
             }));
+            modelBuilder.Entity<Libro>()
+                .HasIndex(l => l.Isbn)
+                .IsUnique();
 
             var libroIdCounter = 1;
             foreach (var scaffale in scaffali)
