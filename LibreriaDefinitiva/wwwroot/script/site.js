@@ -111,8 +111,8 @@ $(document).ready(function () {
             alert('Compilare tutti i campi per aggiungere un libro!');
             return;
         }
-        else if (prezzo <= 0 || quantita <= 0)){
-            alert('Prezzo e quantità devono essere maggiori di 0!');)
+        else if (prezzo <= 0 || quantita <= 0){
+            alert('Prezzo e quantità devono essere maggiori di 0!');
         }
         else if (isbn.length != 13 && isbn.length != 10 && isbn.length != 17) {
             alert('L\'ISBN deve essere di 10, 13 o 17 caratteri!');
