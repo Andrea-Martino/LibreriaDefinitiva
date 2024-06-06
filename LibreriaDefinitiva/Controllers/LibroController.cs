@@ -45,7 +45,7 @@ namespace LibreriaDefinitiva.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult AddBook([FromBody] string isbn, string titolo, string autore, string genere, double prezzo, int quantita, string edizione)
+        public IActionResult AddBook(string isbn, string titolo, string autore, string genere, double prezzo, int quantita, string edizione)
         {
             var libroTrovato = _db.Libri.FirstOrDefault(l => l.Isbn == isbn);
 
@@ -53,7 +53,7 @@ namespace LibreriaDefinitiva.Controllers
             {
                 libroTrovato.Quantita += quantita;
                 _db.SaveChanges();
-                return CreatedAtAction(nameof(SearchBooks), new { isbn = libroTrovato.Isbn }, libroTrovato);
+                return CreatedAtRoute("SearchBooks", new { query = isbn }, libroTrovato);
             }
             else
             {
@@ -80,18 +80,17 @@ namespace LibreriaDefinitiva.Controllers
                     Scaffale = scaffale
                 };
 
-                scaffale.ScaffaleDiLibri.Add(model);
                 _db.Libri.Add(model);
                 _db.SaveChanges();
-                return CreatedAtAction(nameof(SearchBooks), new { isbn = model.Isbn }, model);
+                return CreatedAtRoute("SearchBooks", new { query = isbn }, libroTrovato);
             }
         }
 
-        [HttpGet("{query}", Name = "GetLibro")]
+        [HttpGet("{query}", Name = "SearchBooks")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult SearchBooks([FromQuery] string query)
+        public IActionResult SearchBooks(string query)
         {
             var books = _db.Scaffali
                                 .SelectMany(s => s.ScaffaleDiLibri)
@@ -134,7 +133,7 @@ namespace LibreriaDefinitiva.Controllers
 
             return libroTrovato.Quantita == 0 ? NoContent() : Ok(libroTrovato);
         }
-        //Tutto corretto fino a qui
+        //Tutto corretto fino a qui DDP
 
     }
 }
