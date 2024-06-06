@@ -169,5 +169,33 @@ namespace LibreriaDefinitiva.Controllers
 
             return Ok(model);
         }
+        //Filtrata per genere
+        [HttpGet("GetLibriByGenere")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public ActionResult<IEnumerable<LibroDTO>> GetLibriByGenere(string genere)
+        {
+            var libri = _db.Libri
+                    .AsEnumerable()
+                    .Where(l => l.Genere.Equals(genere, StringComparison.OrdinalIgnoreCase))
+                    .Select(libro => new LibroDTO
+                    {
+                        Isbn = libro.Isbn,
+                        Autore = libro.Autore,
+                        Genere = libro.Genere,
+                        Titolo = libro.Titolo,
+                        Edizione = libro.Edizione,
+                        Prezzo = libro.Prezzo,
+                        Quantita = libro.Quantita
+                    })
+                    .ToList();
+
+            if (!libri.Any())
+            {
+                return NoContent();
+            }
+
+            return Ok(libri);
+        }
     }
 }

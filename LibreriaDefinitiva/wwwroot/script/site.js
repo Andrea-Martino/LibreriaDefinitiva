@@ -116,3 +116,15 @@ $(document).ready(function () {
         });
     });
 });
+// Funzione per filtrare i libri per genere
+async function filterByGenere(event) {
+    let genere = event.target.value;
+
+    try {
+        let response = await fetch(`/api/Libro/GetLibriByGenere?genere=${genere}`);
+        let libri = await response.json();
+        populateLibriTable(libri);
+    } catch (error) {
+        console.error('Errore nel filtrare i libri per genere:', error);
+    }
+}
