@@ -61,7 +61,7 @@ function searchBooks(event) {
     event.preventDefault();
     let query = document.getElementById('search-title').value;
     if (!query) {
-        alert('Inserire un titolo per la ricerca!');)
+        alert('Inserire un titolo per la ricerca!');
     }
     else {
         fetch(`https://localhost:44315/api/Libro/GetLibro?query=${query}`)
