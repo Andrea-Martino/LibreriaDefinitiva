@@ -95,7 +95,7 @@ namespace LibreriaDefinitiva.Controllers
             }
             var books = _db.Scaffali
                                 .SelectMany(s => s.ScaffaleDiLibri)
-                                .Where(b => b.Titolo.ToLower().Contains(query.ToLower()) || b.Autore.ToLower().Contains(query.ToLower()) || b.Isbn.ToLower().Contains(query.ToLower()))
+                                .Where(b => b.Titolo.ToLower().Contains(query.ToLower()) || b.Autore.ToLower().Contains(query.ToLower()) || b.Isbn.ToLower().Contains(query.ToLower()) || b.Genere.ToLower() == query.ToLower())
                                 .ToList();
             if (!books.Any()) return NotFound(new { error = "Non sono presenti libri con queste caratteristiche" });
             return Ok(books);
