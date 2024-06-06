@@ -89,6 +89,7 @@ $(document).ready(function () {
         var isbn = $('#Isbn').val();
         var genere = $('#Genere').val();
         var edizione = $('#Edizione').val();
+        var prezzo = $('#Prezzo').val();
         var quantita = parseInt($('#Quantità').val());
         
         var newBook = {
@@ -97,6 +98,7 @@ $(document).ready(function () {
             Isbn: isbn,
             Genere: genere,
             Edizione: edizione,
+            Prezzo: prezzo,
             Quantita: quantita
         };
         
