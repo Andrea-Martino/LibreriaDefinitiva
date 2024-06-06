@@ -47,39 +47,48 @@ namespace LibreriaDefinitiva.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult AddBook([FromBody] LibroDTO newBook)
         {
-            if (newBook == null) return BadRequest(new { error = "Non puo aggiungere un libro senza caratteristiche." });
-            if (newBook.Isbn.Length != 13 && newBook.Isbn.Length != 10) return BadRequest(new { error = "L'ISBN deve essere composto da 13 caratteri.", newBook.Isbn });
-            if (newBook.Prezzo < 0) return BadRequest(new { error = "Il prezzo non può essere negativo.", prezzo = newBook.Prezzo });
+            if (newBook == null)                                            return BadRequest(new { error = "Impossibile aggiungere un libro senza caratteristiche." });
+            if (newBook.Isbn.Length != 13 && newBook.Isbn.Length != 10)     return BadRequest(new { error = "L'ISBN deve essere composto da 10 o 13 caratteri." });
+            if (newBook.Prezzo < 0)                                         return BadRequest(new { error = "Il prezzo non può essere negativo." });
 
-            var scaffale = _db.Scaffali.FirstOrDefault(s => s.Genere.ToLower() == newBook.Genere.ToLower());
-            if (scaffale == null)
+            var libroPresente = _db.Libri.FirstOrDefault(l => l.Isbn.ToLower() == newBook.Isbn.ToLower());
+            if (libroPresente != null)
             {
-                scaffale = new Scaffale
-                {
-                    Genere = newBook.Genere,
-                    ScaffaleDiLibri = new List<Libro>()
-                };
-                _db.Scaffali.Add(scaffale);
+                libroPresente.Quantita++;
+                _db.SaveChanges();
+                return CreatedAtAction(nameof(SearchBooks), new { isbn = libroPresente.Isbn }, libroPresente);
             }
-
-            Libro model = new()
+            else
             {
-                Isbn = newBook.Isbn,
-                Titolo = newBook.Titolo,
-                Autore = newBook.Autore,
-                Prezzo = newBook.Prezzo,
-                Genere = newBook.Genere,
-                Edizione = newBook.Edizione,
-                Quantita = newBook.Quantita,
-                ScaffaleId = scaffale.ScaffaleId,
-                Scaffale = scaffale
-            };
+                var scaffale = _db.Scaffali.FirstOrDefault(s => s.Genere.ToLower() == newBook.Genere.ToLower());
+                if (scaffale == null)
+                {
+                    scaffale = new Scaffale
+                    {
+                        Genere = newBook.Genere,
+                        ScaffaleDiLibri = new List<Libro>()
+                    };
+                    _db.Scaffali.Add(scaffale);
+                }
 
-            scaffale.ScaffaleDiLibri.Add(model);
-            _db.Libri.Add(model);
+                Libro model = new Libro
+                {
+                    Isbn = newBook.Isbn,
+                    Titolo = newBook.Titolo,
+                    Autore = newBook.Autore,
+                    Prezzo = newBook.Prezzo,
+                    Genere = newBook.Genere,
+                    Edizione = newBook.Edizione,
+                    Quantita = newBook.Quantita,
+                    ScaffaleId = scaffale.ScaffaleId,
+                    Scaffale = scaffale
+                };
 
-            _db.SaveChanges();
-            return CreatedAtAction(nameof(SearchBooks), new { isbn = newBook.Isbn }, newBook);
+                scaffale.ScaffaleDiLibri.Add(model);
+                _db.Libri.Add(model);
+                _db.SaveChanges();
+                return CreatedAtAction(nameof(SearchBooks), new { isbn = model.Isbn }, model);
+            }
         }
 
         [HttpGet("{query}", Name = "GetLibro")]
@@ -95,7 +104,7 @@ namespace LibreriaDefinitiva.Controllers
             }
             var books = _db.Scaffali
                                 .SelectMany(s => s.ScaffaleDiLibri)
-                                .Where(b => b.Titolo.ToLower().Contains(query.ToLower()) || b.Autore.ToLower().Contains(query.ToLower()) || b.Isbn.ToLower().Contains(query.ToLower()) || b.Genere.ToLower() == query.ToLower())
+                                .Where(b => b.Titolo.ToLower().Contains(query.ToLower()) || b.Autore.ToLower().Contains(query.ToLower()) || b.Isbn.Contains(query) || b.Genere.ToLower() == query.ToLower())
                                 .ToList();
             if (!books.Any()) return NotFound(new { error = "Non sono presenti libri con queste caratteristiche" });
             return Ok(books);
@@ -110,7 +119,7 @@ namespace LibreriaDefinitiva.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult UpdateLibro(string isbn, JsonPatchDocument<LibroDTO> patchDTO)
         {
-            if (patchDTO == null || !_db.Libri.Any(l => l.Isbn.ToLower() == isbn.ToLower()))
+            if (patchDTO == null || !_db.Libri.Any(l => l.Isbn == isbn))
             {
                 _logger.LogError("patchDTO non valido o non è presente un libro con isbn uguale a quello passato come parametro.");
                 return BadRequest(new { error = "Ciò che vuoi cambiare è scritto in maniera incorretta." });
