@@ -115,21 +115,16 @@ async function removeBook(event) {
     const isbn = document.getElementById('isbn').value;
     const quantita = parseInt(document.getElementById('quantita').value, 10);
 
-    try {
-        const response = await fetch(`https://localhost:44315/api/Libro?isbn=${isbn}&quantita=${quantita}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if (!response.ok) throw new Error('Network response was not ok');
-
-        if (response.status === 204) {
-            alert('Libro rimosso completamente dal magazzino.');
-        } else {
-            const result = await response.json();
-            alert('Quantità del libro aggiornata.');
+        if (!titolo || !autore || !isbn || !genere || !edizione || !prezzo || !quantita) {
+            alert('Compilare tutti i campi per aggiungere un libro!');
+            return;
+        }
+        else if (prezzo <= 0 || quantita <= 0){
+            alert('Prezzo e quantità devono essere maggiori di 0!');
+        }
+        else if (isbn.length != 13 && isbn.length != 10 && isbn.length != 17) {
+            alert('L\'ISBN deve essere di 10, 13 o 17 caratteri!');
+            return;
         }
 
         document.getElementById('remove-book-form').reset();
