@@ -78,5 +78,39 @@ function searchBooks(event) {
                 tbody.innerHTML += row;
             });
         })
-        .catch(error => console.error('Error searching books:', error));
+        .catch(error => console.error('Errore nella ricerca dei libri:', error));
 }
+
+$(document).ready(function () {
+    $('#add-book-form').submit(function (event) {
+        event.preventDefault();
+        var titolo = $('#Titolo').val();
+        var autore = $('#Autore').val();
+        var isbn = $('#Isbn').val();
+        var genere = $('#Genere').val();
+        var edizione = $('#Edizione').val();
+        var quantita = parseInt($('#Quantità').val());
+        
+        var newBook = {
+            Titolo: titolo,
+            Autore: autore,
+            Isbn: isbn,
+            Genere: genere,
+            Edizione: edizione,
+            Quantita: quantita
+        };
+        
+        $.ajax({
+            url: '../../Controllers/LibroController.cs/AddBook()',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(newBook),
+            success: function (data, textStatus, xhr) {
+                alert('Libro aggiunto con successo!');
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                alert('Errore durante l\'aggiunta del libro: ' + xhr.responseJSON.error);
+            }
+        });
+    });
+});
