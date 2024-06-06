@@ -70,7 +70,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 1,
                             Autore = "Dante Alighieri",
-                            Edizione = "Mondadori",
+                            Edizione = "Mondadori(2010)",
                             Genere = "Poesia epica",
                             Isbn = "9788804507379",
                             Prezzo = 15.0,
@@ -82,7 +82,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 2,
                             Autore = "Giuseppe Tomasi di Lampedusa",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2015)",
                             Genere = "Romanzo storico",
                             Isbn = "9788806213941",
                             Prezzo = 12.0,
@@ -94,7 +94,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 3,
                             Autore = "Umberto Eco",
-                            Edizione = "Mondadori",
+                            Edizione = "Bompiani(2012)",
                             Genere = "Romanzo storico",
                             Isbn = "9788804508994",
                             Prezzo = 16.0,
@@ -106,7 +106,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 4,
                             Autore = "Lev Tolstoj",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2020)",
                             Genere = "Romanzo storico",
                             Isbn = "9788804508932",
                             Prezzo = 17.0,
@@ -118,7 +118,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 5,
                             Autore = "Marguerite Yourcenar",
-                            Edizione = "Mondadori",
+                            Edizione = "Bompiani(2012)",
                             Genere = "Romanzo storico",
                             Isbn = "9788804587978",
                             Prezzo = 14.0,
@@ -130,7 +130,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 6,
                             Autore = "Umberto Eco",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2019)",
                             Genere = "Romanzo storico",
                             Isbn = "9788804617069",
                             Prezzo = 16.0,
@@ -142,7 +142,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 7,
                             Autore = "Jane Austen",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2018)",
                             Genere = "Romanzo",
                             Isbn = "9788804484144",
                             Prezzo = 10.0,
@@ -154,7 +154,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 8,
                             Autore = "Lev Tolstoj",
-                            Edizione = "Mondadori",
+                            Edizione = "Mondadori(2019)",
                             Genere = "Romanzo",
                             Isbn = "9788804527025",
                             Prezzo = 14.0,
@@ -166,7 +166,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 9,
                             Autore = "Gustave Flaubert",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2011)",
                             Genere = "Romanzo",
                             Isbn = "9788804533163",
                             Prezzo = 12.0,
@@ -178,7 +178,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 10,
                             Autore = "James Joyce",
-                            Edizione = "Mondadori",
+                            Edizione = "Adelphi(2018)",
                             Genere = "Romanzo",
                             Isbn = "9788804489606",
                             Prezzo = 18.0,
@@ -190,7 +190,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 11,
                             Autore = "Stendhal",
-                            Edizione = "Mondadori",
+                            Edizione = "Bompiani(2012)",
                             Genere = "Romanzo",
                             Isbn = "9788804484274",
                             Prezzo = 10.0,
@@ -202,7 +202,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 12,
                             Autore = "Ernest Hemingway",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2016)",
                             Genere = "Romanzo",
                             Isbn = "9788804522037",
                             Prezzo = 10.0,
@@ -214,7 +214,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 13,
                             Autore = "F. Scott Fitzgerald",
-                            Edizione = "Mondadori",
+                            Edizione = "Mondadori(2020)",
                             Genere = "Romanzo",
                             Isbn = "9788804707181",
                             Prezzo = 12.0,
@@ -226,7 +226,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 14,
                             Autore = "Italo Calvino",
-                            Edizione = "Arnoldo Mondadori Editore",
+                            Edizione = "Bompiani(2018)",
                             Genere = "Romanzo",
                             Isbn = "9788804642928",
                             Prezzo = 15.0,
@@ -238,7 +238,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 15,
                             Autore = "Albert Camus",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2015)",
                             Genere = "Romanzo",
                             Isbn = "9788804619223",
                             Prezzo = 11.0,
@@ -250,7 +250,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 16,
                             Autore = "Victor Hugo",
-                            Edizione = "Mondadori",
+                            Edizione = "Adelphi(2013)",
                             Genere = "Romanzo",
                             Isbn = "9788804514193",
                             Prezzo = 18.0,
@@ -262,7 +262,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 17,
                             Autore = "Vladimir Nabokov",
-                            Edizione = "Mondadori",
+                            Edizione = "Bompiani(2019)",
                             Genere = "Romanzo",
                             Isbn = "9788804605370",
                             Prezzo = 15.0,
@@ -274,7 +274,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 18,
                             Autore = "Luigi Pirandello",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2017)",
                             Genere = "Romanzo",
                             Isbn = "9788804527438",
                             Prezzo = 10.0,
@@ -286,7 +286,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 19,
                             Autore = "Dino Buzzati",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2021)",
                             Genere = "Romanzo",
                             Isbn = "9788804694156",
                             Prezzo = 13.0,
@@ -298,7 +298,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 20,
                             Autore = "J.D. Salinger",
-                            Edizione = "Mondadori",
+                            Edizione = "Bompiani(2014)",
                             Genere = "Romanzo",
                             Isbn = "9788804701783",
                             Prezzo = 12.0,
@@ -310,7 +310,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 21,
                             Autore = "Carlo Cassola",
-                            Edizione = "Mondadori",
+                            Edizione = "Adelphi(2016)",
                             Genere = "Romanzo",
                             Isbn = "9788804656758",
                             Prezzo = 10.0,
@@ -322,7 +322,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 22,
                             Autore = "Isaac Asimov",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2019)",
                             Genere = "Romanzo",
                             Isbn = "9788804607626",
                             Prezzo = 14.0,
@@ -334,7 +334,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 23,
                             Autore = "Miguel de Cervantes",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2016)",
                             Genere = "Romanzo",
                             Isbn = "9788804514194",
                             Prezzo = 17.0,
@@ -346,7 +346,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 24,
                             Autore = "Franz Kafka",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2019)",
                             Genere = "Romanzo",
                             Isbn = "9788804706375",
                             Prezzo = 14.0,
@@ -358,7 +358,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 25,
                             Autore = "Carlos Ruiz Zafón",
-                            Edizione = "Mondadori",
+                            Edizione = "Adelphi(2014)",
                             Genere = "Romanzo",
                             Isbn = "9788804708065",
                             Prezzo = 15.0,
@@ -370,7 +370,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 26,
                             Autore = "Primo Levi",
-                            Edizione = "Mondadori",
+                            Edizione = "Bompiani(2017)",
                             Genere = "Romanzo",
                             Isbn = "9788804708027",
                             Prezzo = 12.0,
@@ -382,7 +382,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 27,
                             Autore = "Gabriel Garcia Marquez",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2011)",
                             Genere = "Romanzo",
                             Isbn = "9788804707037",
                             Prezzo = 13.0,
@@ -394,7 +394,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 28,
                             Autore = "Isabel Allende",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2018)",
                             Genere = "Romanzo",
                             Isbn = "9788804705088",
                             Prezzo = 15.0,
@@ -406,7 +406,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 29,
                             Autore = "Khaled Hosseini",
-                            Edizione = "Mondadori",
+                            Edizione = "Adelphi(2013)",
                             Genere = "Romanzo",
                             Isbn = "9788804705279",
                             Prezzo = 12.0,
@@ -418,7 +418,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 30,
                             Autore = "Gabriel Garcia Marquez",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2020)",
                             Genere = "Romanzo",
                             Isbn = "9788804704258",
                             Prezzo = 14.0,
@@ -430,7 +430,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 31,
                             Autore = "Patrick Süskind",
-                            Edizione = "Mondadori",
+                            Edizione = "Bompiani(2019)",
                             Genere = "Romanzo",
                             Isbn = "9788804706184",
                             Prezzo = 13.0,
@@ -442,7 +442,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 32,
                             Autore = "Haruki Murakami",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2014)",
                             Genere = "Romanzo",
                             Isbn = "9788804706320",
                             Prezzo = 14.0,
@@ -454,7 +454,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 33,
                             Autore = "Milan Kundera",
-                            Edizione = "Mondadori",
+                            Edizione = "Mondadori(2021)",
                             Genere = "Romanzo",
                             Isbn = "9788804705415",
                             Prezzo = 12.0,
@@ -466,7 +466,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 34,
                             Autore = "Boris Pasternak",
-                            Edizione = "Mondadori",
+                            Edizione = "Adelphi(2016)",
                             Genere = "Romanzo",
                             Isbn = "9788804704470",
                             Prezzo = 16.0,
@@ -478,7 +478,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 35,
                             Autore = "Virginia Woolf",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2013)",
                             Genere = "Romanzo",
                             Isbn = "9788804705569",
                             Prezzo = 11.0,
@@ -490,7 +490,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 36,
                             Autore = "Richard Bach",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2017)",
                             Genere = "Romanzo",
                             Isbn = "9788804705828",
                             Prezzo = 9.0,
@@ -502,7 +502,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 37,
                             Autore = "Harper Lee",
-                            Edizione = "Mondadori",
+                            Edizione = "Bompiani(2019)",
                             Genere = "Romanzo",
                             Isbn = "9788804706788",
                             Prezzo = 12.0,
@@ -514,7 +514,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 38,
                             Autore = "Mario Puzo",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2016)",
                             Genere = "Romanzo",
                             Isbn = "9788804707587",
                             Prezzo = 14.0,
@@ -526,7 +526,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 39,
                             Autore = "Antoine de Saint-Exupéry",
-                            Edizione = "Mondadori",
+                            Edizione = "Mondadori(2013)",
                             Genere = "Letteratura per ragazzi",
                             Isbn = "9788804499179",
                             Prezzo = 9.0,
@@ -538,7 +538,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 40,
                             Autore = "Emily Brontë",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2021)",
                             Genere = "Romanzo gotico",
                             Isbn = "9788806170350",
                             Prezzo = 13.0,
@@ -550,7 +550,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 41,
                             Autore = "Oscar Wilde",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2021)",
                             Genere = "Romanzo gotico",
                             Isbn = "9788804673380",
                             Prezzo = 11.0,
@@ -562,7 +562,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 42,
                             Autore = "Mary Shelley",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2020)",
                             Genere = "Romanzo gotico",
                             Isbn = "9788804707228",
                             Prezzo = 13.0,
@@ -574,7 +574,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 43,
                             Autore = "Bram Stoker",
-                            Edizione = "Mondadori",
+                            Edizione = "Bompiani(2017)",
                             Genere = "Romanzo gotico",
                             Isbn = "9788804707884",
                             Prezzo = 12.0,
@@ -586,7 +586,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 44,
                             Autore = "George Orwell",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2017)",
                             Genere = "Romanzo distopico",
                             Isbn = "9788804210366",
                             Prezzo = 11.0,
@@ -598,7 +598,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 45,
                             Autore = "Aldous Huxley",
-                            Edizione = "Mondadori",
+                            Edizione = "Mondadori(2020)",
                             Genere = "Romanzo distopico",
                             Isbn = "9788804667136",
                             Prezzo = 12.0,
@@ -610,7 +610,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 46,
                             Autore = "George Orwell",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2017)",
                             Genere = "Romanzo distopico",
                             Isbn = "9788804621462",
                             Prezzo = 13.0,
@@ -622,7 +622,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 47,
                             Autore = "Ray Bradbury",
-                            Edizione = "Mondadori",
+                            Edizione = "Mondadori(2020)",
                             Genere = "Romanzo distopico",
                             Isbn = "9788804667137",
                             Prezzo = 12.0,
@@ -634,7 +634,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 48,
                             Autore = "J.R.R. Tolkien",
-                            Edizione = "Mondadori",
+                            Edizione = "Mondadori(2011)",
                             Genere = "Fantasy",
                             Isbn = "9788804474718",
                             Prezzo = 20.0,
@@ -646,7 +646,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 49,
                             Autore = "George R.R. Martin",
-                            Edizione = "Mondadori",
+                            Edizione = "Mondadori(2014)",
                             Genere = "Fantasy",
                             Isbn = "9788804566621",
                             Prezzo = 20.0,
@@ -658,7 +658,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 50,
                             Autore = "Miguel de Cervantes",
-                            Edizione = "Mondadori",
+                            Edizione = "Adelphi(2016)",
                             Genere = "Romanzo parodico",
                             Isbn = "9788804661905",
                             Prezzo = 18.0,
@@ -670,7 +670,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 51,
                             Autore = "Herman Melville",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2014)",
                             Genere = "Romanzo d'avventura",
                             Isbn = "9788804527827",
                             Prezzo = 15.0,
@@ -682,7 +682,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 52,
                             Autore = "Alexandre Dumas",
-                            Edizione = "Mondadori",
+                            Edizione = "Mondadori(2017)",
                             Genere = "Romanzo d'avventura",
                             Isbn = "9788804508185",
                             Prezzo = 14.0,
@@ -694,7 +694,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 53,
                             Autore = "Franz Kafka",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2015)",
                             Genere = "Romanzo breve",
                             Isbn = "9788804668706",
                             Prezzo = 8.0,
@@ -706,7 +706,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 54,
                             Autore = "Fred Uhlman",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2021)",
                             Genere = "Romanzo breve",
                             Isbn = "9788804707112",
                             Prezzo = 10.0,
@@ -718,7 +718,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 55,
                             Autore = "Elie Wiesel",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2015)",
                             Genere = "Romanzo breve",
                             Isbn = "9788804706610",
                             Prezzo = 10.0,
@@ -730,7 +730,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 56,
                             Autore = "Italo Svevo",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2014)",
                             Genere = "Romanzo psicologico",
                             Isbn = "9788804482621",
                             Prezzo = 11.0,
@@ -742,7 +742,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 57,
                             Autore = "Fëdor Dostoevskij",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2017)",
                             Genere = "Romanzo psicologico",
                             Isbn = "9788804530865",
                             Prezzo = 14.0,
@@ -754,7 +754,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 58,
                             Autore = "Michael Ende",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2019)",
                             Genere = "Romanzo fantasy",
                             Isbn = "9788804702148",
                             Prezzo = 10.0,
@@ -766,7 +766,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 59,
                             Autore = "Italo Calvino",
-                            Edizione = "Mondadori",
+                            Edizione = "Adelphi(2013)",
                             Genere = "Romanzo fantastico",
                             Isbn = "9788804512816",
                             Prezzo = 13.0,
@@ -778,7 +778,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 60,
                             Autore = "Italo Calvino",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2018)",
                             Genere = "Romanzo fantastico",
                             Isbn = "9788804683336",
                             Prezzo = 11.0,
@@ -790,7 +790,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 61,
                             Autore = "Lewis Carroll",
-                            Edizione = "Mondadori",
+                            Edizione = "Feltrinelli(2018)",
                             Genere = "Romanzo per ragazzi",
                             Isbn = "9788804680371",
                             Prezzo = 9.0,
@@ -802,7 +802,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 62,
                             Autore = "Antoine de Saint-Exupéry",
-                            Edizione = "Mondadori",
+                            Edizione = "Bompiani(2013)",
                             Genere = "Romanzo per ragazzi",
                             Isbn = "9788804619224",
                             Prezzo = 9.0,
@@ -814,7 +814,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 63,
                             Autore = "Arthur Conan Doyle",
-                            Edizione = "Mondadori",
+                            Edizione = "Adelphi(2018)",
                             Genere = "Romanzo giallo",
                             Isbn = "9788804707358",
                             Prezzo = 10.0,
@@ -826,7 +826,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 64,
                             Autore = "Dan Brown",
-                            Edizione = "Mondadori",
+                            Edizione = "Einaudi(2015)",
                             Genere = "Thriller",
                             Isbn = "9788804708096",
                             Prezzo = 13.0,
@@ -838,7 +838,7 @@ namespace LibreriaDefinitiva.Migrations
                         {
                             LibroId = 65,
                             Autore = "Dan Brown",
-                            Edizione = "Mondadori",
+                            Edizione = "Garzanti(2014)",
                             Genere = "Thriller",
                             Isbn = "9788804708126",
                             Prezzo = 12.0,
