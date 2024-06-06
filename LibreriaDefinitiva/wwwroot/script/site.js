@@ -9,66 +9,74 @@
 
 
 
-function fetchBooks() {
-    fetch('https://localhost:44315/GetAllLibri')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Errore nella richiesta');
-            }
-            return response.json();
-        })
-        .then(data => {
-            updateTable(data);
-        })
-        .catch(error => {
-            console.error('Si è verificato un errore:', error);
-        });
-}
-
-function searchBooks() {
-    const searchInput = document.getElementById('search-title').value;
-
-    fetch(`https://localhost:44315/${searchInput}`, { method: 'GET' })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Errore nella ricerca');
-            }
-            return response.json();
-        })
-        .then(data => {
-            updateTable(data);
-        })
-        .catch(error => {
-            console.error('Si è verificato un errore durante la ricerca:', error);
-        });
-}
-
-function updateTable(books) {
-    const tbody = document.querySelector('tbody');
-
-    tbody.innerHTML = '';
-
-    if (books.length === 0) {
-        const tr = document.createElement('tr');
-        tr.innerHTML = '<td colspan="7">Nessun libro trovato.</td>';
-        tbody.appendChild(tr);
-    } else {
-        books.forEach(book => {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>${book.isbn}</td>
-                <td>${book.titolo}</td>
-                <td>${book.autore}</td>
-                <td>${book.genere}</td>
-                <td>${book.edizione}</td>
-                <td>${book.prezzo}</td>
-                <td>${book.quantita}</td>
-            `;
-            tbody.appendChild(tr);
-        });
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function () {
-    fetchBooks();
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplay: true, // Abilita l'autoplay
+            autoplayTimeout: 3000, // Imposta il tempo di visualizzazione di ogni slide in millisecondi
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        });
+    });
+
+
+    fetchAllBooks();
 });
+
+function fetchAllBooks() {
+    fetch('https://localhost:44315/api/Libro/GetAllLibri')
+        .then(response => response.json())
+        .then(data => {
+            let tbody = document.querySelector('table tbody');
+            tbody.innerHTML = '';
+            data.forEach(book => {
+                let row = `<tr>
+                    <td>${book.isbn}</td>
+                    <td>${book.titolo}</td>
+                    <td>${book.autore}</td>
+                    <td>${book.genere}</td>
+                    <td>${book.edizione}</td>
+                    <td>${book.prezzo}</td>
+                    <td>${book.quantita}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        })
+        .catch(error => console.error('Errore nella fetch dei libri:', error));
+}
+
+function searchBooks(event) {
+    event.preventDefault();
+    let query = document.getElementById('search-title').value;
+    fetch(`https://localhost:44315/api/Libro/GetLibro?query=${query}`)
+        .then(response => response.json())
+        .then(data => {
+            let tbody = document.querySelector('table tbody');
+            tbody.innerHTML = '';
+            data.forEach(book => {
+                let row = `<tr>
+                    <td>${book.isbn}</td>
+                    <td>${book.titolo}</td>
+                    <td>${book.autore}</td>
+                    <td>${book.genere}</td>
+                    <td>${book.edizione}</td>
+                    <td>${book.prezzo}</td>
+                    <td>${book.quantita}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        })
+        .catch(error => console.error('Error searching books:', error));
+}

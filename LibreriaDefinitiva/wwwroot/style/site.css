@@ -81,20 +81,49 @@ form {
             background-color: #555;
         }
 
-table {
+.tabella {
+    margin: 20px;
+}
+
+.tabella table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-table, th, td {
-    border: 1px solid black;
-}
-
-th, td {
-    padding: 0.5rem;
+.tabella th, .tabella td {
+    padding: 12px 20px;
     text-align: left;
+    border: 1px solid #333;
+    color: #333;
 }
+
+.tabella thead {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.tabella tbody tr:nth-child(even) {
+    background-color: #333;
+    color: #333;
+}
+
+.tabella tbody tr:nth-child(odd) {
+    background-color: #333;
+    color: #333;
+}
+
+.tabella tbody tr:hover {
+    background-color: #555555;
+    cursor: pointer;
+}
+
+.tabella tbody td {
+    border: 1px solid #333333;
+}
+
 
 footer {
     background-color: #333;

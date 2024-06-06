@@ -6,55 +6,14 @@
     <link rel="icon" type="image/png" href="https://localhost:44315/images/icon.png">
     <title>Cerca un libro</title>
     <link rel="stylesheet" href="style/site.css">
-    <script defer src="script/site.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="style/owl.carousel.min.css">
     <link rel="stylesheet" href="style/owl.theme.default.min.css">
-
-    <!-- Link per il foglio di stile CSS di Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Link per lo script JavaScript di Bootstrap (opzionale, solo se si utilizzano componenti che richiedono JavaScript) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Link per il bundle completo di JavaScript di Bootstrap, che include jQuery e Popper.js (opzionale, solo se si utilizzano componenti che richiedono JavaScript) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-    <style>
-        .owl-carousel {
-            display: flex;
-            justify-content: center;
-        }
-
-            .owl-carousel .item {
-                margin: 10px;
-            }
-
-                .owl-carousel .item img {
-                    width: 200px;
-                    heigh
-    </style>
-    <script>
-        $(document).ready(function () {
-            $(".owl-carousel").owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1000: {
-                        items: 5
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="script/site.js" defer></script>
 </head>
 <body style="background-color: #d0d0d0">
     <header>
@@ -69,10 +28,10 @@
     </header>
     <div id="main-content">
         <h2>Cerca un libro</h2>
-        <form id="search-book-form">
+        <form id="search-book-form" onsubmit="searchBooks(event)">
             <label for="search">Titolo o Autore:</label><br>
             <input type="text" id="search-title" name="search" placeholder="Cerca per titolo o autore"><br><br>
-            <button onclick="searchBooks()" type="submit">Cerca</button>
+            <button type="submit">Cerca</button>
         </form>
     </div>
     <div class="tabella">
@@ -89,13 +48,12 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Dati da file -->
+                <!-- Dati dei libri presi dal database -->
             </tbody>
         </table>
     </div>
 
-
-    <footer style="position: fixed">
+    <footer>
         <p>&copy; 2024 La Libreria del Vezzo. Tutti i diritti riservati.</p>
         <p>
             <a href="https://localhost:44315/contatti.html">Contatti</a> |
