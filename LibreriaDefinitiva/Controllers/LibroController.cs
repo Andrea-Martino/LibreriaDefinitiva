@@ -45,7 +45,7 @@ namespace LibreriaDefinitiva.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult AddBook([FromBody] string isbn, [FromBody] string titolo, [FromBody] string autore, [FromBody] string genere, [FromBody] double prezzo, [FromBody] int quantita, [FromBody] string edizione)
+        public IActionResult AddBook([FromBody] string isbn, string titolo, string autore, string genere, double prezzo, int quantita, string edizione)
         {
             var libroTrovato = _db.Libri.FirstOrDefault(l => l.Isbn == isbn);
 
