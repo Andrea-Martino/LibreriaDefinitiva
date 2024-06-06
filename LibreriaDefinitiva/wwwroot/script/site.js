@@ -119,7 +119,7 @@ async function removeBook(event) {
             alert('Compilare tutti i campi per aggiungere un libro!');
             return;
         }
-        else if (prezzo <= 0 || quantita <= 0){
+        else if (prezzo <= 0 || quantita <= 0) {
             alert('Prezzo e quantità devono essere maggiori di 0!');
         }
         else if (isbn.length != 13 && isbn.length != 10 && isbn.length != 17) {
@@ -127,12 +127,23 @@ async function removeBook(event) {
             return;
         }
 
-        document.getElementById('remove-book-form').reset();
-    } catch (error) {
-        console.error('Errore nella rimozione del libro:', error);
-    }
-}
-
+            $.ajax({
+                url: '../../Controllers/LibroController.cs/AddBook()',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(newBook),
+                success: function (data, textStatus, xhr) {
+                    alert('Libro aggiunto con successo!');
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert('Errore durante l\'aggiunta del libro: ' + xhr.responseJSON.error);
+                }
+            });
+        }
+        
+    });
+});
+// Funzione per filtrare i libri per genere
 async function filterByGenere(event) {
     const genere = event.target.value;
     const query = genere ? `?genere=${genere}` : '';
