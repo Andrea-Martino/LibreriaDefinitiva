@@ -7,7 +7,7 @@
 namespace LibreriaDefinitiva.Migrations
 {
     /// <inheritdoc />
-    public partial class LibreriaDefinitva : Migration
+    public partial class LibreriaDefinitiva : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
