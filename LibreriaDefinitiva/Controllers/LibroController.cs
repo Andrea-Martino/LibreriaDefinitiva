@@ -134,7 +134,7 @@ namespace LibreriaDefinitiva.Controllers
 
             return libroTrovato.Quantita == 0 ? NoContent() : Ok(libroTrovato);
         }
-        //Tutto corretto fino a qui
+        //Tutto corretto fino a qui DDP
 
     }
 }
