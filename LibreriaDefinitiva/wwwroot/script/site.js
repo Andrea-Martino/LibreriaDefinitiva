@@ -9,151 +9,146 @@
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
-                }
-            }
-        });
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    // Associa la funzione per la ricerca dei libri
+    const searchForm = document.getElementById('search-book-form');
+    if (searchForm) {
+        searchForm.addEventListener('submit', searchBooks);
+    }
 
+    // Associa la funzione per l'aggiunta di libri
+    const addBookForm = document.getElementById('add-book-form');
+    if (addBookForm) {
+        addBookForm.addEventListener('submit', addBook);
+    }
 
-    fetchAllBooks();
+    // Associa la funzione per la rimozione di libri
+    const removeBookForm = document.getElementById('remove-book-form');
+    if (removeBookForm) {
+        removeBookForm.addEventListener('submit', removeBook);
+    }
+
+    // Carica tutti i libri nella tabella all'avvio della pagina cercaLibro.html
+    if (window.location.pathname.endsWith('cercaLibro.html')) {
+        loadAllBooks();
+    }
 });
 
-function fetchAllBooks() {
-    fetch('https://localhost:44315/api/Libro/GetAllLibri')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            let tbody = document.querySelector('table tbody');
-            tbody.innerHTML = '';
-            if (data.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="7">No books available</td></tr>';
-            } else {
-                data.forEach(book => {
-                    let row = `<tr>
-                        <td>${book.isbn}</td>
-                        <td>${book.titolo}</td>
-                        <td>${book.autore}</td>
-                        <td>${book.genere}</td>
-                        <td>${book.edizione}</td>
-                        <td>${book.prezzo}</td>
-                        <td>${book.quantita}</td>
-                    </tr>`;
-                    tbody.innerHTML += row;
-                });
-            }
-        })
-        .catch(error => console.error('Errore nella fetch dei libri:', error));
+async function loadAllBooks() {
+    try {
+        const response = await fetch('https://localhost:44315/api/Libro/GetAllLibri');
+        if (!response.ok) throw new Error('Network response was not ok');
+
+        const books = await response.json();
+        populateTable(books);
+    } catch (error) {
+        console.error('Errore nel caricamento dei libri:', error);
+    }
 }
 
+function populateTable(books) {
+    const tbody = document.querySelector('table tbody');
+    tbody.innerHTML = '';
+    books.forEach(book => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${book.isbn}</td>
+            <td>${book.titolo}</td>
+            <td>${book.autore}</td>
+            <td>${book.genere}</td>
+            <td>${book.edizione}</td>
+            <td>${book.prezzo}</td>
+            <td>${book.quantita}</td>
+        `;
+        tbody.appendChild(row);
+    });
+}
 
-function searchBooks(event) {
+async function searchBooks(event) {
     event.preventDefault();
-    let query = document.getElementById('search-title').value;
-    if (!query) {
-        alert('Inserire un titolo per la ricerca!');
-    }
-    else {
-        fetch(`https://localhost:44315/api/Libro/GetLibro?query=${query}`)
-            .then(response => response.json())
-            .then(data => {
-                let tbody = document.querySelector('table tbody');
-                tbody.innerHTML = '';
-                data.forEach(book => {
-                    let row = `<tr>
-                    <td>${book.isbn}</td>
-                    <td>${book.titolo}</td>
-                    <td>${book.autore}</td>
-                    <td>${book.genere}</td>
-                    <td>${book.edizione}</td>
-                    <td>${book.prezzo}</td>
-                    <td>${book.quantita}</td>
-                </tr>`;
-                    tbody.innerHTML += row;
-                });
-            })
-            .catch(error => console.error('Errore nella ricerca dei libri:', error));
-    }
-}
-
-$(document).ready(function () {
-    $('#add-book-form').submit(function (event) {
-        event.preventDefault();
-        var titolo = $('#Titolo').val();
-        var autore = $('#Autore').val();
-        var isbn = $('#Isbn').val();
-        var genere = $('#Genere').val();
-        var edizione = $('#Edizione').val();
-        var prezzo = $('#Prezzo').val();
-        var quantita = parseInt($('#Quantità').val());
-
-        if (!titolo || !autore || !isbn || !genere || !edizione || !prezzo || !quantita) {
-            alert('Compilare tutti i campi per aggiungere un libro!');
-            return;
-        }
-        else if (prezzo <= 0 || quantita <= 0)){
-            alert('Prezzo e quantità devono essere maggiori di 0!');)
-        }
-        else if (isbn.length != 13 && isbn.length != 10 && isbn.length != 17) {
-            alert('L\'ISBN deve essere di 10, 13 o 17 caratteri!');
-            return;
-        }
-        else {
-            var newBook = {
-                Titolo: titolo,
-                Autore: autore,
-                Isbn: isbn,
-                Genere: genere,
-                Edizione: edizione,
-                Prezzo: prezzo,
-                Quantita: quantita
-            };
-
-            $.ajax({
-                url: '../../Controllers/LibroController.cs/AddBook()',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(newBook),
-                success: function (data, textStatus, xhr) {
-                    alert('Libro aggiunto con successo!');
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    alert('Errore durante l\'aggiunta del libro: ' + xhr.responseJSON.error);
-                }
-            });
-        }
-        
-    });
-});
-// Funzione per filtrare i libri per genere
-async function filterByGenere(event) {
-    let genere = event.target.value;
+    const query = document.getElementById('search-title').value;
 
     try {
-        let response = await fetch(`/api/Libro/GetLibriByGenere?genere=${genere}`);
-        let libri = await response.json();
-        populateLibriTable(libri);
+        const response = await fetch(`https://localhost:44315/api/Libro/${query}`);
+        if (!response.ok) throw new Error('Network response was not ok');
+
+        const books = await response.json();
+        populateTable(books);
     } catch (error) {
-        console.error('Errore nel filtrare i libri per genere:', error);
+        console.error('Errore nella ricerca dei libri:', error);
+    }
+}
+
+async function addBook(event) {
+    event.preventDefault();
+    const bookData = {
+        isbn: document.getElementById('Isbn').value,
+        titolo: document.getElementById('Titolo').value,
+        autore: document.getElementById('Autore').value,
+        genere: document.getElementById('Genere').value,
+        prezzo: parseFloat(document.getElementById('Prezzo').value),
+        quantita: parseInt(document.getElementById('Quantità').value, 10),
+        edizione: document.getElementById('Edizione').value,
+    };
+
+    try {
+        const response = await fetch('https://localhost:44315/api/Libro', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bookData)
+        });
+
+        if (!response.ok) throw new Error('Network response was not ok');
+
+        const result = await response.json();
+        alert('Libro aggiunto con successo!');
+        document.getElementById('add-book-form').reset();
+    } catch (error) {
+        console.error('Errore nell\'aggiunta del libro:', error);
+    }
+}
+
+async function removeBook(event) {
+    event.preventDefault();
+    const isbn = document.getElementById('isbn').value;
+    const quantita = parseInt(document.getElementById('quantita').value, 10);
+
+    try {
+        const response = await fetch(`https://localhost:44315/api/Libro?isbn=${isbn}&quantita=${quantita}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) throw new Error('Network response was not ok');
+
+        if (response.status === 204) {
+            alert('Libro rimosso completamente dal magazzino.');
+        } else {
+            const result = await response.json();
+            alert('Quantità del libro aggiornata.');
+        }
+
+        document.getElementById('remove-book-form').reset();
+    } catch (error) {
+        console.error('Errore nella rimozione del libro:', error);
+    }
+}
+
+async function filterByGenere(event) {
+    const genere = event.target.value;
+    const query = genere ? `?genere=${genere}` : '';
+
+    try {
+        const response = await fetch(`https://localhost:44315/api/Libro/GetAllLibri${query}`);
+        if (!response.ok) throw new Error('Network response was not ok');
+
+        const books = await response.json();
+        populateTable(books);
+    } catch (error) {
+        console.error('Errore nel filtraggio dei libri:', error);
     }
 }
