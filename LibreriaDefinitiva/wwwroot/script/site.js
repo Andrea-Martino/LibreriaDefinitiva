@@ -9,7 +9,7 @@
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     // Associa la funzione per la ricerca dei libri
     const searchForm = document.getElementById('search-book-form');
     if (searchForm) {
@@ -158,3 +158,4 @@ async function filterByGenere(event) {
         console.error('Errore nel filtraggio dei libri:', error);
     }
 }
+
