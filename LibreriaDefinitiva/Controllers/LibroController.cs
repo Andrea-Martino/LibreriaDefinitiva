@@ -13,9 +13,7 @@ using System.Linq;
 
 namespace LibreriaDefinitiva.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class LibroController : ControllerBase
+    public class LibroController : BaseAPIController
     {
         private readonly ApplicationDbContext _db;
         private readonly ILogger<LibroController> _logger;

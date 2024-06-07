@@ -30,11 +30,11 @@
         <h2>Cerca un libro</h2>
         <form id="search-book-form">
             <label for="search">Titolo, Autore o ISBN:</label><br>
-            <input type="text" id="search-title" name="search" placeholder="Cerca per titolo, autore o ISBN"><br><br>
-            <button type="submit">Cerca</button>
+            <input type="text" id="cerca-input" name="search" placeholder="Cerca per titolo, autore o ISBN"><br><br>
+            <button id="cerca">Cerca</button>
         </form>
         <div id="filtroGenere" style="align-content: center; align-items: center; align-self: center">
-            <select id="genere-select" onchange="filterByGenere(event)">
+            <select id="genere-select">
                 <option value="">Filtra per Genere</option>
                 <option value="Poesia Epica">Poesia Epica</option>
                 <option value="Romanzo storico">Romanzo storico</option>
@@ -54,23 +54,8 @@
             </select>
         </div>
     </div>
-    <div class="tabella">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ISBN</th>
-                    <th>Titolo</th>
-                    <th>Autore</th>
-                    <th>Genere</th>
-                    <th>Edizione</th>
-                    <th>Prezzo</th>
-                    <th>Quantita</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Dati dei libri presi dal database -->
-            </tbody>
-        </table>
+    <div class="risultati-captati">
+        
     </div>
 
     <footer>
